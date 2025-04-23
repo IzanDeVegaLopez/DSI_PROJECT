@@ -26,7 +26,13 @@
                     <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" />
                     <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" />
                 </ui:VisualElement>
-                <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1;" />
+                <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap;">
+                    <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" />
+                    <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" />
+                    <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" />
+                    <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" />
+                    <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" />
+                </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="RSpace" style="flex-grow: 1; flex-direction: row; width: 50%; max-width: 50%;">
                 <ui:VisualElement name="CurrentSelectedItemSpace" style="flex-grow: 1; width: 50%; max-width: 50%;">
@@ -34,7 +40,9 @@
                     <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" style="align-self: center; margin-top: -30px; margin-left: -30px;" />
                     <ui:VisualElement style="flex-grow: 1; max-height: 55%;" />
                 </ui:VisualElement>
-                <ui:VisualElement name="StatsSpace" style="flex-grow: 1; max-width: 50%;" />
+                <ui:VisualElement name="StatsSpace" style="flex-grow: 1; max-width: 50%;">
+                    <ui:Label tabindex="-1" text="//Stats" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 60px; margin-top: 54px; margin-left: 20px;" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
