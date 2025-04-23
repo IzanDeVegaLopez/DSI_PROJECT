@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="SelectableCategoriItem" class="Item" style="background-color: rgb(162, 229, 115);" />
+</ui:UXML>

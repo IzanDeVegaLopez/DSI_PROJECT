@@ -1,7 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="SelectableCategoriItem" src="project://database/Assets/SelectableCategoriItem.uxml?fileID=9197481963319205126&amp;guid=2e26940615120374eb673bf1a5fa7b45&amp;type=3#SelectableCategoriItem" />
     <Style src="project://database/Assets/MainMenu.uss?fileID=7433441132597879392&amp;guid=3ffafd16613f8a547a5e99b1ba6f6502&amp;type=3#MainMenu" />
     <ui:VisualElement name="TheGodFather" style="flex-grow: 1; display: flex; visibility: visible; overflow: visible;">
-        <ui:VisualElement name="MainMenu" style="flex-grow: 1; display: flex; visibility: visible; height: 100%; width: 100%;">
+        <ui:VisualElement name="MainMenu" class="MenuContainer" style="flex-grow: 1; display: none; visibility: visible; height: 100%; width: 100%;">
             <ui:VisualElement name="TitleSpace" style="flex-grow: 1; height: 50%; max-height: 99%;">
                 <ui:Label tabindex="-1" text="GAME NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: center; align-items: center; justify-content: flex-start; font-size: 240px; padding-top: 141px;" />
             </ui:VisualElement>
@@ -12,6 +13,28 @@
                     <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" class="MainMenuButton" />
                 </ui:VisualElement>
                 <ui:VisualElement name="PaddingRight" style="flex-grow: 1;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="EquipmentMenu" class="MenuContainer" style="flex-grow: 1; flex-direction: row;">
+            <ui:VisualElement name="LSpace" style="flex-grow: 1; height: 100%; max-width: 50%;">
+                <ui:VisualElement name="MenuTitleSpace" style="flex-grow: 1; height: 20%; max-height: 15%;">
+                    <ui:Label tabindex="-1" text="//Equipment" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 89px; margin-left: 60px; margin-top: 20px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SelectableCategoriesSpace" style="flex-grow: 1; max-height: 25%; flex-direction: row;">
+                    <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" />
+                    <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" />
+                    <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" />
+                    <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="RSpace" style="flex-grow: 1; flex-direction: row; width: 50%; max-width: 50%;">
+                <ui:VisualElement name="CurrentSelectedItemSpace" style="flex-grow: 1; width: 50%; max-width: 50%;">
+                    <ui:VisualElement name="UppertextSpace" style="flex-grow: 1; max-height: 25%;" />
+                    <ui:Instance template="SelectableCategoriItem" name="SelectableCategoriItem" style="align-self: center; margin-top: -30px; margin-left: -30px;" />
+                    <ui:VisualElement style="flex-grow: 1; max-height: 55%;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="StatsSpace" style="flex-grow: 1; max-width: 50%;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
