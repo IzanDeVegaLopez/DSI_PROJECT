@@ -1,14 +1,18 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MainMenu.uss?fileID=7433441132597879392&amp;guid=3ffafd16613f8a547a5e99b1ba6f6502&amp;type=3#MainMenu" />
-    <ui:VisualElement style="flex-grow: 1;">
-        <ui:VisualElement style="flex-grow: 1; height: 50%; max-height: 60%;" />
-        <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
-            <ui:VisualElement style="flex-grow: 1;" />
-            <ui:VisualElement style="flex-grow: 1;">
-                <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" class="MainMenuButton" />
-                <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" class="MainMenuButton" />
+    <ui:VisualElement name="TheGodFather" style="flex-grow: 1; display: flex; visibility: visible; overflow: visible;">
+        <ui:VisualElement name="MainMenu" style="flex-grow: 1; display: flex; visibility: visible; height: 100%; width: 100%;">
+            <ui:VisualElement name="TitleSpace" style="flex-grow: 1; height: 50%; max-height: 99%;">
+                <ui:Label tabindex="-1" text="GAME NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: center; align-items: center; justify-content: flex-start; font-size: 240px; padding-top: 141px;" />
             </ui:VisualElement>
-            <ui:VisualElement style="flex-grow: 1;" />
+            <ui:VisualElement name="ButtonsSpaceV" style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="PaddingLeft" style="flex-grow: 1;" />
+                <ui:VisualElement name="ButtonsSpaceH" style="flex-grow: 1;">
+                    <ui:Button text="Start Game" parse-escape-sequences="true" display-tooltip-when-elided="true" class="MainMenuButton" />
+                    <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" class="MainMenuButton" />
+                </ui:VisualElement>
+                <ui:VisualElement name="PaddingRight" style="flex-grow: 1;" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
