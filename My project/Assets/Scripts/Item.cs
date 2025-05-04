@@ -188,4 +188,18 @@ public class Item : VisualElement
         this.style.marginTop = 30;
         this.style.marginLeft = 30;
     }
+
+    public void AssignItem(VisualElement v)
+    {
+        Item i = v as Item;
+        Nombre = i.Nombre;
+        Flavour = i.Flavour;
+        File = i.File;
+        Determination = i.Determination;
+        Vigor = i.Vigor;
+        Serenity = i.Serenity;
+        Agility = i.Agility;
+        Hope = i.Hope;
+        Hate = i.Hate;
+    }
 }
