@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class JsonHelper
 {
-    public static string ToJson(List<Item> items, bool pretty_print = true)
+    public static string ToJson(int[] items, bool pretty_print = true)
     {
         return JsonUtility.ToJson(items, true);
     }
 
-    public static List<Item> FromJson(string json)
+    public static int[] FromJson(string json)
     {
-        return JsonUtility.FromJson<List<Item>>(json);
+        return JsonUtility.FromJson<int[]>(json);
     }
 }
