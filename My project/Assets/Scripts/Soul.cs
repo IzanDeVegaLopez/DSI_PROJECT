@@ -17,9 +17,4 @@ public class Soul : Item
     private int _exp;
     private int _exp_next_level; // Puede falsearse, o hacer una función para calcularlo.
 
-    Soul()
-    {
-        _type = ItemType.Soul;
-    }
-
 } 

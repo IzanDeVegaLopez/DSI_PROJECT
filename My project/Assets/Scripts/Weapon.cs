@@ -28,9 +28,4 @@ public class Weapon : Item
         get { return _speed; }
     }
     private int _speed; // Representado como un decimal con dos cifras decimales.
-
-    Weapon()
-    {
-        _type = ItemType.Weapon;
-    }
 }

@@ -5,9 +5,5 @@ using StatDictionary = System.Collections.Generic.Dictionary<Stats, int>;
 
 public class Relic: Item
 {
-    Relic()
-    {
-        _type = ItemType.Relic;
-    }
 
 }
