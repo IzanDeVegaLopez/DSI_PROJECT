@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MainMenu.uss?fileID=7433441132597879392&amp;guid=3ffafd16613f8a547a5e99b1ba6f6502&amp;type=3#MainMenu" />
-    <ui:VisualElement name="TheGodFather" style="flex-grow: 1; display: flex; visibility: visible; overflow: visible;">
+    <ui:VisualElement name="TheGodFather" style="flex-grow: 1; display: flex; visibility: visible; overflow: visible; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
         <ui:VisualElement name="MainMenu" class="MenuContainer" style="flex-grow: 1; display: none; visibility: visible; height: 100%; width: 100%;">
             <ui:VisualElement name="TitleSpace" style="flex-grow: 1; height: 50%; max-height: 99%;">
                 <ui:Label tabindex="-1" text="GAME NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: center; align-items: center; justify-content: flex-start; font-size: 240px; padding-top: 141px;" />
@@ -15,7 +15,7 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="EquipmentMenu" class="MenuContainer" style="flex-grow: 1; flex-direction: row; display: flex; visibility: visible;">
-            <ui:VisualElement name="LSpace" style="flex-grow: 1; height: 100%; max-width: 50%;">
+            <ui:VisualElement name="LSpace" style="flex-grow: 1; height: 100%; max-width: 50%; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
                 <ui:VisualElement name="MenuTitleSpace" style="flex-grow: 1; height: 20%; max-height: 15%;">
                     <ui:Label tabindex="-1" text="//Equipment" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 89px; margin-left: 60px; margin-top: 20px;" />
                 </ui:VisualElement>
@@ -45,10 +45,13 @@
                         <Item File="Drum_Kit" />
                         <Item File="Electric_Guitar" />
                     </ui:VisualElement>
-                    <ui:VisualElement picking-mode="Ignore" name="Menu4" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: none;">
-                        <Item File="Carraca" />
-                        <Item File="Drum_Kit" />
-                        <Item File="Electric_Guitar" />
+                    <ui:VisualElement picking-mode="Ignore" name="Loadouts" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: column; display: none;">
+                        <ui:VisualElement name="Loadout1" style="min-width: auto; min-height: 20%; flex-direction: row; background-color: rgb(221, 255, 145); margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px;">
+                            <ui:VisualElement name="Load" style="flex-grow: 1; min-width: 70%; flex-direction: row;">
+                                <ui:Label tabindex="-1" text="· 1 - None" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 60px; -unity-font-style: normal; align-self: center;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="Save" style="flex-grow: 1; background-color: rgb(110, 255, 170);" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="ReturnButtonSpace" style="flex-grow: 1;">
