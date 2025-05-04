@@ -7,7 +7,6 @@ using static UnityEditor.Progress;
 [Serializable]
 public class Item : VisualElement
 {
-    //public event Action Cambio;
     public string Nombre
     {
         get { return nombre; }
@@ -41,7 +40,7 @@ public class Item : VisualElement
             if (value != file)
             {
                 file = value;
-                //Cambio?.Invoke();
+                this.style.backgroundImage = Resources.Load<Texture2D>(file);
             }
         }
     }
@@ -180,7 +179,7 @@ public class Item : VisualElement
     {
         this.style.width = 200;
         this.style.height = 200;
-        //this.style.backgroundImage = Resources.Load<Texture2D>(file);
+        this.style.backgroundImage = Resources.Load<Texture2D>(file);
         this.style.backgroundColor = new Color(162f/255, 229f/255, 115f/255,1);
         this.style.alignItems = Align.Stretch;
         this.style.justifyContent = Justify.FlexStart;
