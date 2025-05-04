@@ -19,8 +19,21 @@
                 <ui:VisualElement name="MenuTitleSpace" style="flex-grow: 1; height: 20%; max-height: 15%;">
                     <ui:Label tabindex="-1" text="//Equipment" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 89px; margin-left: 60px; margin-top: 20px;" />
                 </ui:VisualElement>
-                <ui:VisualElement name="SelectableCategoriesSpace" style="flex-grow: 1; max-height: 25%; flex-direction: row;" />
-                <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; max-height: 45%;" />
+                <ui:VisualElement name="SelectableCategoriesSpace" style="flex-grow: 1; max-height: 25%; flex-direction: row;">
+                    <Item File="Amp" />
+                    <Item File="Bell" />
+                    <Item />
+                    <Item />
+                </ui:VisualElement>
+                <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; max-height: 45%;">
+                    <Item />
+                    <Item />
+                    <Item />
+                    <Item />
+                    <Item />
+                    <Item />
+                    <Item />
+                </ui:VisualElement>
                 <ui:VisualElement name="ReturnButtonSpace" style="flex-grow: 1;">
                     <ui:Button text="Return" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EquipmentReturn" style="align-self: flex-start; align-items: center; font-size: 40px; margin-left: 30px; margin-top: 36px;" />
                 </ui:VisualElement>
@@ -28,7 +41,9 @@
             <ui:VisualElement name="RSpace" style="flex-grow: 1; flex-direction: row; width: 50%; max-width: 50%;">
                 <ui:VisualElement name="CurrentSelectedItemSpace" style="flex-grow: 1; width: 50%; max-width: 50%;">
                     <ui:VisualElement name="UppertextSpace" style="flex-grow: 1; max-height: 25%;" />
-                    <ui:VisualElement name="CurrentSelectedItemMidSpace" style="flex-grow: 1; align-items: center; justify-content: flex-start; align-self: center;" />
+                    <ui:VisualElement name="CurrentSelectedItemMidSpace" style="flex-grow: 1; align-items: center; justify-content: flex-start; align-self: center;">
+                        <Item />
+                    </ui:VisualElement>
                     <ui:VisualElement style="flex-grow: 1; max-height: 55%;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="StatsSpace" style="flex-grow: 1; max-width: 50%;">
