@@ -18,13 +18,17 @@ public class ItemSelector : MonoBehaviour
         VisualElement selectable_it = equipment_menu.Q("SelectableItemsSpace");
         selectable_it.RegisterCallback<ClickEvent>(seleccionaItem);
         _category_selected_it = selectable_cat.ElementAt(0);
+        _category_selected_it.style.backgroundColor = new Color(1, 0, 0, 1);
         //Item current_selected;
         _selected_item = equipment_menu.Q("CurrentSelectedItemMidSpace").ElementAt(0);
+        (_selected_item as Item).AssignItem(_category_selected_it as Item);
     }
     void seleccionaCategoria(ClickEvent evt)
     {
         VisualElement miTarjeta = evt.target as VisualElement;
+        _category_selected_it.style.backgroundColor = new Color(162f / 255, 229f / 255, 115f / 255, 1);
         _category_selected_it = miTarjeta as Item;
+        _category_selected_it.style.backgroundColor = new Color(1, 0, 0, 1);
         (_selected_item as Item).AssignItem(_category_selected_it);
     
         //Cambiar items por coger
