@@ -26,13 +26,15 @@
                     <Item />
                 </ui:VisualElement>
                 <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; max-height: 45%;">
-                    <Item />
-                    <Item />
-                    <Item />
-                    <Item />
-                    <Item />
-                    <Item />
-                    <Item />
+                    <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-wrap: wrap;">
+                        <Item File="Carraca" />
+                        <Item File="Drum_Kit" />
+                        <Item File="Electric_Guitar" />
+                        <Item File="Golden_Lute" />
+                        <Item File="Gong" />
+                        <Item File="Microphone" />
+                        <Item File="Kazoo" />
+                    </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="ReturnButtonSpace" style="flex-grow: 1;">
                     <ui:Button text="Return" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EquipmentReturn" style="align-self: flex-start; align-items: center; font-size: 40px; margin-left: 30px; margin-top: 36px;" />
