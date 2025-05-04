@@ -11,6 +11,13 @@ public class ItemSelector : MonoBehaviour
     VisualElement _category_selected_it;
     VisualElement _selected_items_stats;
 
+    public int[] Items
+    {
+        get { return _items; }
+        set { _items = value; }
+    }
+    int[] _items = new int[3];
+
     VisualElement[] _submenus = new VisualElement[4];
     private void Start()
     {
@@ -70,6 +77,8 @@ public class ItemSelector : MonoBehaviour
             {
                 (_selected_items_stats.ElementAt(i) as SliderInt).value = stats[i];
             }
+
+            _items[(_category_selected_it as Item).Id] = selected.Id; 
         }
     }
 }

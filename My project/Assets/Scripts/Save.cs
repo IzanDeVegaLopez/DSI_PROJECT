@@ -8,12 +8,15 @@ using UnityEngine.UIElements;
 
 public class Save : MonoBehaviour
 {
+    ItemSelector _iSelector;
+
     List <VisualElement> _loadout_load;
     List <VisualElement> _loadout_save;
 
     // Start is called before the first frame update
     void Start()
     {
+        _iSelector = GetComponent<ItemSelector>();
         _loadout_load = new List <VisualElement> ();
         _loadout_save = new List <VisualElement> ();
 
@@ -25,21 +28,24 @@ public class Save : MonoBehaviour
         foreach (VisualElement visualElement in loadouts)
         {
             int temp = i;
-            VisualElement load = visualElement.Children().ToList()[0];
-            load.Q<Label>("Label").text = "· "+temp+" - "; // TODO: Connect to loadout soul name
-            load.RegisterCallback<ClickEvent, int>(LoadLoadout, temp);
-            visualElement.Children().ToList()[1].RegisterCallback<ClickEvent, int>(SaveLoadout, temp);
+            List<VisualElement> options = visualElement.Children().ToList();
+
+            options[0].Q<Label>("Label").text = temp+" - "; // TODO: Connect to loadout soul name
+            options[0].RegisterCallback<ClickEvent, int>(LoadLoadout, temp);
+
+            options[1].RegisterCallback<ClickEvent, int>(SaveLoadout, temp);
             i++;
         }
     }
 
     void LoadLoadout(ClickEvent evt,int num)
     {
-        int[] items = JsonHelper.FromJson(File.ReadAllText(Application.persistentDataPath + "/Saves/loadout" + num));
+        int[] items = JsonHelper.FromJson(File.ReadAllText(Application.persistentDataPath + "/loadout_" + num + ".json"));
+        _iSelector.Items = items;
     }
     void SaveLoadout(ClickEvent evt, int num)
     {
-        int[] items = new int[3]; // TODO: Connect to current loadout
-        System.IO.File.WriteAllText(Application.persistentDataPath + "/Saves/loadout" + num, JsonHelper.ToJson(items));
+        int[] items = _iSelector.Items;
+        System.IO.File.WriteAllText(Application.persistentDataPath + "/loadout_" + num + ".json", JsonHelper.ToJson(items));
     }
 }
