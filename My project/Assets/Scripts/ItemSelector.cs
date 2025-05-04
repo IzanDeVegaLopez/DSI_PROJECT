@@ -8,6 +8,8 @@ public class ItemSelector : MonoBehaviour
     int category_selected_index = 0;
     VisualElement _selected_item;
     VisualElement _category_selected_it;
+
+    VisualElement[] _submenus;
     private void Start()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
