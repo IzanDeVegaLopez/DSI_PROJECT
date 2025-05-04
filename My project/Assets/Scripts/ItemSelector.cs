@@ -30,6 +30,7 @@ public class ItemSelector : MonoBehaviour
             _submenus[i] = selectable_it.ElementAt(i);
             _submenus[i].style.display = i != 0 ? DisplayStyle.None : DisplayStyle.Flex;
         }
+        //_player_stats
 
         //Item current_selected;
         _selected_item = equipment_menu.Q("CurrentSelectedItemMidSpace").ElementAt(0);
