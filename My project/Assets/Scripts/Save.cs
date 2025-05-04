@@ -35,11 +35,11 @@ public class Save : MonoBehaviour
 
     void LoadLoadout(ClickEvent evt,int num)
     {
-        JsonHelper.FromJson(File.ReadAllText(Application.persistentDataPath + "/Saves/loadout" + num));
+        int[] items = JsonHelper.FromJson(File.ReadAllText(Application.persistentDataPath + "/Saves/loadout" + num));
     }
     void SaveLoadout(ClickEvent evt, int num)
     {
-        List<Item> temp = new List<Item>(); // TODO: Connect to current loadout
-        System.IO.File.WriteAllText(Application.persistentDataPath + "/Saves/loadout" + num, JsonHelper.ToJson(temp));
+        int[] items = new int[3]; // TODO: Connect to current loadout
+        System.IO.File.WriteAllText(Application.persistentDataPath + "/Saves/loadout" + num, JsonHelper.ToJson(items));
     }
 }
