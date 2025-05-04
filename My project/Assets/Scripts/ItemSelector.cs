@@ -10,6 +10,7 @@ public class ItemSelector : MonoBehaviour
     VisualElement _selected_item;
     VisualElement _category_selected_it;
     VisualElement _selected_items_stats;
+    VisualElement _player_stats;
 
     VisualElement[] _submenus = new VisualElement[4];
     private void Start()
@@ -43,6 +44,9 @@ public class ItemSelector : MonoBehaviour
             _category_selected_it.style.backgroundColor = new Color(162f / 255, 229f / 255, 115f / 255, 1);
             _category_selected_it = miTarjeta as Item;
             _category_selected_it.style.backgroundColor = new Color(1, 0, 0, 1);
+
+            int[] stats;
+
             if((_category_selected_it as Item).Id != 3)
                 (_selected_item as Item).AssignItem(_category_selected_it);
 
@@ -50,10 +54,11 @@ public class ItemSelector : MonoBehaviour
             {
                 _submenus[i].style.display = (_category_selected_it as Item).Id != i ? DisplayStyle.None : DisplayStyle.Flex;
             }
-            int[] stats = (_selected_item as Item).getStats();
+            stats = (_selected_item as Item).getStats();
             for(int i = 0; i < 6; ++i)
             {
                 (_selected_items_stats.ElementAt(i) as SliderInt).value = stats[i];
+                (_player_stats.ElementAt(i) as SliderInt).value = stats[i];
             }
         }
     }
