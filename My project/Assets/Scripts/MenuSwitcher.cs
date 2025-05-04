@@ -21,13 +21,11 @@ public class MenuSwitcher : MonoBehaviour
             ev=>{
                 hideAll();
                 equipmentMenu.style.display = DisplayStyle.Flex;
-                Debug.Log("meow");
         });
         equipmentReturn.RegisterCallback<ClickEvent>(
             ev => {
                 hideAll();
                 mainMenu.style.display = DisplayStyle.Flex;
-                Debug.Log("meow");
         });
 
         hideAll();

@@ -7,6 +7,17 @@ using static UnityEditor.Progress;
 [Serializable]
 public class Item : VisualElement
 {
+    public int Id
+    {
+        get { return id; }
+        set
+        {
+            if (value != id)
+            {
+                id = value;
+            }
+        }
+    }
     public string Nombre
     {
         get { return nombre; }
@@ -143,6 +154,9 @@ public class Item : VisualElement
     [FormerlySerializedAs("Hate")]
     [SerializeField]
     protected int hate;
+    [FormerlySerializedAs("Id")]
+    [SerializeField]
+    protected int id;
 
 
     public new class UxmlFactory : UxmlFactory<Item, UxmlTraits> { }
@@ -158,7 +172,8 @@ public class Item : VisualElement
         UxmlIntAttributeDescription agility = new UxmlIntAttributeDescription { name = "Agility", defaultValue = 0 };
         UxmlIntAttributeDescription hope = new UxmlIntAttributeDescription { name = "Hope", defaultValue = 0 };
         UxmlIntAttributeDescription hate = new UxmlIntAttributeDescription { name = "Hate", defaultValue = 0 };
-        
+        UxmlIntAttributeDescription id = new UxmlIntAttributeDescription { name = "Id", defaultValue = 0 };
+
         public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
         {
             base.Init(ve, bag, cc);
@@ -172,6 +187,7 @@ public class Item : VisualElement
             item.Agility = agility.GetValueFromBag(bag, cc);
             item.Hope = hope.GetValueFromBag(bag, cc);
             item.Hate = hate.GetValueFromBag(bag, cc);
+            item.Id = id.GetValueFromBag(bag, cc);
         }
     }
 
@@ -201,5 +217,17 @@ public class Item : VisualElement
         Agility = i.Agility;
         Hope = i.Hope;
         Hate = i.Hate;
+    }
+
+    public int[] getStats()
+    {
+        int[] n = new int[6];
+        n[0] = Determination;
+        n[1] = Vigor;
+        n[2] = Serenity;
+        n[3] = Agility;
+        n[4] = Hope;
+        n[5] = Hate;
+        return n;
     }
 }

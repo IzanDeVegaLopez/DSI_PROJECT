@@ -20,30 +20,30 @@
                     <ui:Label tabindex="-1" text="//Equipment" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 89px; margin-left: 60px; margin-top: 20px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="SelectableCategoriesSpace" style="flex-grow: 1; max-height: 25%; flex-direction: row;">
-                    <Item File="Amp" name="0" />
-                    <Item File="Bell" name="1" />
-                    <Item name="2" />
-                    <Item name="3" />
+                    <Item name="0" />
+                    <Item name="1" Id="1" />
+                    <Item name="2" Id="2" />
+                    <Item name="3" Id="3" />
                 </ui:VisualElement>
                 <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; max-height: 45%;">
                     <ui:VisualElement picking-mode="Ignore" name="Menu1" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
-                        <Item File="Carraca" />
-                        <Item File="Drum_Kit" />
-                        <Item File="Electric_Guitar" />
-                        <Item File="Golden_Lute" />
-                        <Item File="Gong" />
-                        <Item File="Microphone" />
-                        <Item File="Kazoo" />
+                        <Item File="Carraca" Vigor="22" Serenity="-14" Agility="30" Hope="47" Hate="-15" />
+                        <Item File="Drum_Kit" Id="1" Hate="32" Hope="-26" Serenity="52" Vigor="-21" />
+                        <Item File="Electric_Guitar" Id="2" Hope="25" Serenity="75" />
+                        <Item File="Golden_Lute" Id="3" Hope="42" Serenity="-84" />
+                        <Item File="Gong" Id="4" Agility="-63" Serenity="-37" />
+                        <Item File="Microphone" Id="5" Hope="-53" Agility="35" />
+                        <Item File="Kazoo" Id="6" Hope="74" Vigor="68" Serenity="-32" Agility="-16" />
                     </ui:VisualElement>
-                    <ui:VisualElement picking-mode="Ignore" name="Menu2" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: none;">
-                        <Item File="Carraca" />
-                        <Item File="Drum_Kit" />
-                        <Item File="Electric_Guitar" />
+                    <ui:VisualElement picking-mode="Ignore" name="Menu2" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
+                        <Item File="Carraca" Vigor="36" Serenity="-22" Agility="45" Hate="-16" />
+                        <Item File="Drum_Kit" Id="1" Hope="34" Agility="-34" Vigor="-24" />
+                        <Item File="Electric_Guitar" Id="2" Hope="42" Agility="-31" Serenity="-23" />
                     </ui:VisualElement>
-                    <ui:VisualElement picking-mode="Ignore" name="Menu3" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: none;">
-                        <Item File="Carraca" />
-                        <Item File="Drum_Kit" />
-                        <Item File="Electric_Guitar" />
+                    <ui:VisualElement picking-mode="Ignore" name="Menu3" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
+                        <Item File="Carraca" Hope="56" Agility="-44" Serenity="-43" Hate="71" />
+                        <Item File="Drum_Kit" Id="1" />
+                        <Item File="Electric_Guitar" Id="2" />
                     </ui:VisualElement>
                     <ui:VisualElement picking-mode="Ignore" name="Loadouts" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: column; display: none;">
                         <ui:VisualElement name="Loadout1" style="min-width: auto; min-height: 20%; flex-direction: row; background-color: rgb(221, 255, 145); margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px;">
@@ -61,10 +61,17 @@
             <ui:VisualElement name="RSpace" style="flex-grow: 1; flex-direction: row; width: 50%; max-width: 50%;">
                 <ui:VisualElement name="CurrentSelectedItemSpace" style="flex-grow: 1; width: 50%; max-width: 50%;">
                     <ui:VisualElement name="UppertextSpace" style="flex-grow: 1; max-height: 25%;" />
-                    <ui:VisualElement name="CurrentSelectedItemMidSpace" style="flex-grow: 1; align-items: center; justify-content: flex-start; align-self: center;">
+                    <ui:VisualElement name="CurrentSelectedItemMidSpace" style="flex-grow: 1; align-items: center; justify-content: flex-start; align-self: center; height: 200px; max-height: 300px;">
                         <Item />
                     </ui:VisualElement>
-                    <ui:VisualElement style="flex-grow: 1; max-height: 55%;" />
+                    <ui:VisualElement name="SelectedItemStats" style="flex-grow: 1; max-height: 55%;">
+                        <ui:SliderInt label="Determination" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
+                        <ui:SliderInt label="Vigor" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
+                        <ui:SliderInt label="Serenity" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
+                        <ui:SliderInt label="Agility" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
+                        <ui:SliderInt label="Hope" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
+                        <ui:SliderInt label="Hate" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
+                    </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="StatsSpace" style="flex-grow: 1; max-width: 50%;">
                     <ui:Label tabindex="-1" text="//Stats" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 60px; margin-top: 54px; margin-left: 20px;" />
