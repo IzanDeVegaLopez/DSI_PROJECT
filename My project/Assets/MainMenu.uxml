@@ -20,10 +20,10 @@
                     <ui:Label tabindex="-1" text="//Equipment" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 89px; margin-left: 60px; margin-top: 20px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="SelectableCategoriesSpace" style="flex-grow: 1; max-height: 25%; flex-direction: row;">
-                    <Item File="Amp" />
-                    <Item File="Bell" />
-                    <Item />
-                    <Item />
+                    <Item File="Amp" name="0" />
+                    <Item File="Bell" name="1" />
+                    <Item name="2" />
+                    <Item name="3" />
                 </ui:VisualElement>
                 <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; max-height: 45%;">
                     <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-wrap: wrap;">
