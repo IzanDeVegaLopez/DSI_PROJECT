@@ -1,4 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Loadout" src="project://database/Assets/Loadout.uxml?fileID=9197481963319205126&amp;guid=23c7abb8781b7914b971884175b13130&amp;type=3#Loadout" />
     <Style src="project://database/Assets/MainMenu.uss?fileID=7433441132597879392&amp;guid=3ffafd16613f8a547a5e99b1ba6f6502&amp;type=3#MainMenu" />
     <ui:VisualElement name="TheGodFather" style="flex-grow: 1; display: flex; visibility: visible; overflow: visible; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
         <ui:VisualElement name="MainMenu" class="MenuContainer" style="flex-grow: 1; display: none; visibility: visible; height: 100%; width: 100%;">
@@ -46,13 +47,9 @@
                         <Item File="Electric_Guitar" Id="2" />
                     </ui:VisualElement>
                     <ui:VisualElement picking-mode="Ignore" name="Loadouts" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: column; display: flex;">
-                        <ui:VisualElement name="Loadout" style="min-width: auto; min-height: 20%; flex-direction: row; background-color: rgb(221, 255, 145); margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px;">
-                            <ui:VisualElement name="Load" style="flex-grow: 1; min-width: 70%; flex-direction: row;">
-                                <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="font-size: 60px; -unity-font-style: normal; align-self: center;" />
-                            </ui:VisualElement>
-                            <ui:VisualElement name="Save" style="flex-grow: 1; background-color: rgb(110, 255, 170);" />
-                            <ui:VisualElement name="Delete" style="flex-grow: 1; background-color: rgb(255, 128, 134);" />
-                        </ui:VisualElement>
+                        <ui:Instance template="Loadout" name="Loadout" />
+                        <ui:Instance template="Loadout" name="Loadout" />
+                        <ui:Instance template="Loadout" name="Loadout" />
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="ReturnButtonSpace" style="flex-grow: 1;">
