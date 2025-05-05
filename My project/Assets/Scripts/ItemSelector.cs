@@ -43,6 +43,9 @@ public class ItemSelector : MonoBehaviour
         _selected_item = equipment_menu.Q("CurrentSelectedItemMidSpace").ElementAt(0);
         (_selected_item as Item).AssignItem(_category_selected_it as Item);
         _selected_items_stats = equipment_menu.Q("SelectedItemStats");
+
+
+        LoadLoadout(new int[] { 0, 2, 1 });
     }
     void seleccionaCategoria(ClickEvent evt)
     {
@@ -85,6 +88,22 @@ public class ItemSelector : MonoBehaviour
             }
 
             _items[(_category_selected_it as Item).Id] = selected.Id; 
+        }
+    }
+
+    void getCurrentBuild()
+    {
+
+    }
+
+    void LoadLoadout(int[] loadout_array)
+    {
+        var root = GetComponent<UIDocument>().rootVisualElement;
+        VisualElement selectable_cat = root.Q("SelectableCategoriesSpace");
+        VisualElement selectable_it = root.Q("SelectableItemsSpace");
+        for (int i = 0; i < 3; ++i)
+        {
+            (selectable_cat.ElementAt(i) as Item).AssignItem(selectable_it.ElementAt(i).ElementAt(loadout_array[i]));
         }
     }
 }
