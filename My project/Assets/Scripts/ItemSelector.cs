@@ -34,7 +34,7 @@ public class ItemSelector : MonoBehaviour
         selectable_it.RegisterCallback<ClickEvent>(seleccionaItem);
         for (int i = 0; i < 4; ++i)
         {
-            Debug.Log(selectable_it.ElementAt(i));
+            //Debug.Log(selectable_it.ElementAt(i));
             _submenus[i] = selectable_it.ElementAt(i);
             _submenus[i].style.display = i != 0 ? DisplayStyle.None : DisplayStyle.Flex;
         }
@@ -45,14 +45,14 @@ public class ItemSelector : MonoBehaviour
         (_selected_item as Item).AssignItem(_category_selected_it as Item);
         _selected_items_stats = equipment_menu.Q("SelectedItemStats");
         _player_stats = equipment_menu.Q("PlayerStats");
-        Debug.Log(_player_stats);
+        //Debug.Log(_player_stats);
 
 
         //LoadLoadout(new int[] { 0, 2, 1 });
     }
     void seleccionaCategoria(ClickEvent evt)
     {
-        Debug.Log("Category");
+        //Debug.Log("Category");
         VisualElement miTarjeta = evt.target as VisualElement;
         if (miTarjeta is Item)
         {
@@ -80,7 +80,7 @@ public class ItemSelector : MonoBehaviour
     }
     void seleccionaItem(ClickEvent evt)
     {
-        Debug.Log("Item");
+        //Debug.Log("Item");
         VisualElement miTarjeta = evt.target as VisualElement;
         if (miTarjeta is Item)
         {
@@ -116,11 +116,22 @@ public class ItemSelector : MonoBehaviour
     public void LoadLoadout(int[] loadout_array)
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
+
+        /*
+        string s = "";
+        foreach (int i in loadout_array)
+            s += i + " ";
+        Debug.Log(s);
+        */
+
         VisualElement selectable_cat = root.Q("SelectableCategoriesSpace");
         VisualElement selectable_it = root.Q("SelectableItemsSpace");
         for (int i = 0; i < 3; ++i)
         {
-            (selectable_cat.ElementAt(i) as Item).AssignItem(selectable_it.ElementAt(i).ElementAt(loadout_array[i]));
+            if (loadout_array[i] >= 0)
+                (selectable_cat.ElementAt(i) as Item).AssignItem(selectable_it.ElementAt(i).ElementAt(loadout_array[i]));
+            else
+                (selectable_cat.ElementAt(i) as Item).AssignVoidItem();
         }
     }
 }

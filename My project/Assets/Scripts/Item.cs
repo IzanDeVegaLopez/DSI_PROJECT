@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
@@ -217,6 +218,18 @@ public class Item : VisualElement
         Agility = i.Agility;
         Hope = i.Hope;
         Hate = i.Hate;
+    }
+    public void AssignVoidItem()
+    {
+        Nombre = "";
+        Flavour = "";
+        File = "";
+        Determination = 0;
+        Vigor = 0;
+        Serenity = 0;
+        Agility = 0;
+        Hope = 0;
+        Hate = 0;
     }
 
     public int[] getStats()
