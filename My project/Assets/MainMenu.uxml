@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MainMenu.uss?fileID=7433441132597879392&amp;guid=3ffafd16613f8a547a5e99b1ba6f6502&amp;type=3#MainMenu" />
     <ui:VisualElement name="TheGodFather" style="flex-grow: 1; display: flex; visibility: visible; overflow: visible; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
-        <ui:VisualElement name="MainMenu" class="MenuContainer" style="flex-grow: 1; display: flex; visibility: visible; height: 100%; width: 100%;">
+        <ui:VisualElement name="MainMenu" class="MenuContainer" style="flex-grow: 1; display: none; visibility: visible; height: 100%; width: 100%;">
             <ui:VisualElement name="TitleSpace" style="flex-grow: 1; height: 50%; max-height: 99%;">
                 <ui:Label tabindex="-1" text="GAME NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: center; align-items: center; justify-content: flex-start; font-size: 240px; padding-top: 141px;" />
             </ui:VisualElement>
@@ -36,7 +36,7 @@
                         <Item File="Kazoo" Id="6" Hope="74" Vigor="68" Serenity="-32" Agility="-16" />
                     </ui:VisualElement>
                     <ui:VisualElement picking-mode="Ignore" name="Menu2" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
-                        <Item File="Carraca" Vigor="36" Serenity="-22" Agility="45" Hate="-16" />
+                        <Item File="Carraca" Vigor="36" Serenity="-22" Agility="45" Hate="-16" Determination="1" />
                         <Item File="Drum_Kit" Id="1" Hope="34" Agility="-34" Vigor="-24" />
                         <Item File="Electric_Guitar" Id="2" Hope="42" Agility="-31" Serenity="-23" />
                     </ui:VisualElement>
