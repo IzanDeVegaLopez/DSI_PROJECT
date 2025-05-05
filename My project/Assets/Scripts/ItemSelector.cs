@@ -102,6 +102,7 @@ public class ItemSelector : MonoBehaviour
                 (_player_stats.ElementAt(i) as SliderInt).value += stats[i];
             }
 
+            Debug.Log(selected.Id);
             _items[(_category_selected_it as Item).Id] = selected.Id;
             _last_click_changed_cat = false;
         }
@@ -112,7 +113,7 @@ public class ItemSelector : MonoBehaviour
 
     }
 
-    void LoadLoadout(int[] loadout_array)
+    public void LoadLoadout(int[] loadout_array)
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
         VisualElement selectable_cat = root.Q("SelectableCategoriesSpace");

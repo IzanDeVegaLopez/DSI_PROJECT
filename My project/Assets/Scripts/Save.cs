@@ -18,7 +18,7 @@ public class Save : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("SaveStart");
+        Debug.Log(Application.persistentDataPath);
         _iSelector = GetComponent <ItemSelector> ();
         _loadout_load = new List <VisualElement> ();
         _loadout_save = new List <VisualElement> ();
@@ -31,7 +31,6 @@ public class Save : MonoBehaviour
         foreach (VisualElement visualElement in loadouts)
         {
             int temp = i;
-            List<VisualElement> options = visualElement.Children().ToList();
             SaveData data = new();
 
             if (File.Exists(Application.persistentDataPath + "/loadout_" + temp + ".json"))
@@ -43,31 +42,39 @@ public class Save : MonoBehaviour
             //Debug.Log("soulname: " + data.soulname);
             //Debug.Log("fullname: " + (temp+1).ToString() + " - " + data.soulname);
 
-            options[0].Q<Label>("Label").text = (temp + 1).ToString() + " - " + data.soulname; // TODO: Connect to loadout soul name
-            options[0].RegisterCallback<ClickEvent, int>(LoadLoadout, temp);
+            visualElement.ElementAt(0).Q<Label>("Label").text = (temp + 1).ToString() + " - " + data.soulname; // TODO: Connect to loadout soul name
+            visualElement.ElementAt(0).RegisterCallback<ClickEvent, int>(LoadLoadout, temp);
 
-            options[1].RegisterCallback<ClickEvent, int>(SaveLoadout, temp);
-            options[2].RegisterCallback<ClickEvent, int>(DeleteLoadout, temp);
+            visualElement.ElementAt(1).RegisterCallback<ClickEvent, int>(SaveLoadout, temp);
+
+            visualElement.ElementAt(2).RegisterCallback<ClickEvent, int>(DeleteLoadout, temp);
+
             i++;
         }
     }
 
     void LoadLoadout(ClickEvent evt,int num)
     {
+        //Debug.Log("Load");
+
         SaveData data = JsonHelper.FromJson(File.ReadAllText(Application.persistentDataPath + "/loadout_" + num + ".json"));
         _iSelector.Items = data.items;
+        _iSelector.LoadLoadout(data.items);
     }
     void SaveLoadout(ClickEvent evt, int num)
     {
+        //Debug.Log("Save");
         SaveData data = new();
         data.items = _iSelector.Items; //items[2] for soul
         if (data.items[2] != -1)  data.soulname = (root.Q("Menu3").Children().ToList()[2] as Item).name;
         root.Q("Loadout"+(num+1).ToString()).Q<Label>("Label").text = (num + 1).ToString() + " - " + data.soulname;
-
+       // Debug.Log(data);
         System.IO.File.WriteAllText(Application.persistentDataPath + "/loadout_" + num + ".json", JsonHelper.ToJson(data));
     }
     void DeleteLoadout(ClickEvent evt, int num)
     {
+        //Debug.Log("Delete");
+
         SaveData data = new();
         root.Q("Loadout" + (num + 1).ToString()).Q<Label>("Label").text = (num + 1).ToString() + " - None";
 
