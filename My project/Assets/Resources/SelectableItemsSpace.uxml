@@ -1,0 +1,32 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; max-height: 45%;">
+        <ui:VisualElement picking-mode="Ignore" name="Menu1" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: none;">
+            <Item File="Carraca" Vigor="22" Serenity="-14" Agility="30" Hope="47" Hate="-15" />
+            <Item File="Drum_Kit" Id="1" Hate="32" Hope="-26" Serenity="52" Vigor="-21" />
+            <Item File="Electric_Guitar" Id="2" Hope="25" Serenity="75" />
+            <Item File="Golden_Lute" Id="3" Hope="42" Serenity="-84" />
+            <Item File="Gong" Id="4" Agility="-63" Serenity="-37" />
+            <Item File="Microphone" Id="5" Hope="-53" Agility="35" />
+            <Item File="Kazoo" Id="6" Hope="74" Vigor="68" Serenity="-32" Agility="-16" />
+        </ui:VisualElement>
+        <ui:VisualElement picking-mode="Ignore" name="Menu2" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
+            <Item File="Carraca" Vigor="36" Serenity="-22" Agility="45" Hate="-16" Determination="1" />
+            <Item File="Drum_Kit" Id="1" Hope="34" Agility="-34" Vigor="-24" />
+            <Item File="Electric_Guitar" Id="2" Hope="42" Agility="-31" Serenity="-23" />
+        </ui:VisualElement>
+        <ui:VisualElement picking-mode="Ignore" name="Menu3" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
+            <Item File="Carraca" Hope="56" Agility="-44" Serenity="-43" Hate="71" />
+            <Item File="Drum_Kit" Id="1" />
+            <Item File="Electric_Guitar" Id="2" />
+        </ui:VisualElement>
+        <ui:VisualElement picking-mode="Ignore" name="Loadouts" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: column; display: flex;">
+            <ui:VisualElement name="Loadout1" style="min-width: auto; min-height: 20%; flex-direction: row; background-color: rgb(221, 255, 145); margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px;">
+                <ui:VisualElement name="Load" style="flex-grow: 1; min-width: 70%; flex-direction: row;">
+                    <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="font-size: 60px; -unity-font-style: normal; align-self: center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Save" style="flex-grow: 1; background-color: rgb(110, 255, 170);" />
+                <ui:VisualElement name="Delete" style="flex-grow: 1; background-color: rgb(255, 128, 134);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

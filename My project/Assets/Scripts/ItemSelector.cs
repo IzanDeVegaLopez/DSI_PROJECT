@@ -18,7 +18,7 @@ public class ItemSelector : MonoBehaviour
         get { return _items; }
         set { _items = value; }
     }
-    int[] _items = new int[3];
+    int[] _items = new int[3] { -1,-1,-1};
 
     VisualElement[] _submenus = new VisualElement[4];
     private void Start()
