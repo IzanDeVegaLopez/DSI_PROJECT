@@ -76,13 +76,13 @@
                 </ui:VisualElement>
                 <ui:VisualElement name="StatsSpace" style="flex-grow: 1; max-width: 50%;">
                     <ui:Label tabindex="-1" text="//Player Stats" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 60px; margin-top: 54px; margin-left: 20px;" />
-                    <ui:VisualElement name="SelectedItemStats" style="flex-grow: 1; max-height: 55%;">
-                        <ui:SliderInt label="Determination" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Vigor" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Serenity" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Agility" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Hope" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Hate" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
+                    <ui:VisualElement name="PlayerStats" style="flex-grow: 1; max-height: 55%;">
+                        <ui:SliderInt label="Determination" high-value="200" low-value="-200" name="SliderInt" show-input-field="true" />
+                        <ui:SliderInt label="Vigor" high-value="200" low-value="-200" name="SliderInt" show-input-field="true" />
+                        <ui:SliderInt label="Serenity" high-value="200" low-value="-200" name="SliderInt" show-input-field="true" />
+                        <ui:SliderInt label="Agility" high-value="200" low-value="-200" name="SliderInt" show-input-field="true" />
+                        <ui:SliderInt label="Hope" high-value="200" low-value="-200" name="SliderInt" show-input-field="true" />
+                        <ui:SliderInt label="Hate" high-value="200" low-value="-200" name="SliderInt" show-input-field="true" />
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>

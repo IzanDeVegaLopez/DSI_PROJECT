@@ -11,6 +11,7 @@ public class ItemSelector : MonoBehaviour
     VisualElement _category_selected_it;
     VisualElement _selected_items_stats;
     VisualElement _player_stats;
+    bool _last_click_changed_cat = true;
 
     public int[] Items
     {
@@ -43,12 +44,15 @@ public class ItemSelector : MonoBehaviour
         _selected_item = equipment_menu.Q("CurrentSelectedItemMidSpace").ElementAt(0);
         (_selected_item as Item).AssignItem(_category_selected_it as Item);
         _selected_items_stats = equipment_menu.Q("SelectedItemStats");
+        _player_stats = equipment_menu.Q("PlayerStats");
+        Debug.Log(_player_stats);
 
 
-        LoadLoadout(new int[] { 0, 2, 1 });
+        //LoadLoadout(new int[] { 0, 2, 1 });
     }
     void seleccionaCategoria(ClickEvent evt)
     {
+        Debug.Log("Category");
         VisualElement miTarjeta = evt.target as VisualElement;
         if (miTarjeta is Item)
         {
@@ -69,25 +73,37 @@ public class ItemSelector : MonoBehaviour
             for(int i = 0; i < 6; ++i)
             {
                 (_selected_items_stats.ElementAt(i) as SliderInt).value = stats[i];
-                (_player_stats.ElementAt(i) as SliderInt).value = stats[i];
+                //(_player_stats.ElementAt(i) as SliderInt).value = stats[i];
             }
+            _last_click_changed_cat = true;
         }
     }
     void seleccionaItem(ClickEvent evt)
     {
+        Debug.Log("Item");
         VisualElement miTarjeta = evt.target as VisualElement;
         if (miTarjeta is Item)
         {
+            int[] stats = (_selected_item as Item).getStats();
+            //if (!_last_click_changed_cat){
+                for (int i = 0; i < 6; ++i)
+                {
+                    (_player_stats.ElementAt(i) as SliderInt).value -= stats[i];
+                }
+            //}
+
             Item selected = miTarjeta as Item;
             (_selected_item as Item).AssignItem(selected);
             (_category_selected_it as Item).AssignItem(selected);
-            int[] stats = (_selected_item as Item).getStats();
+            stats = (_selected_item as Item).getStats();
             for (int i = 0; i < 6; ++i)
             {
                 (_selected_items_stats.ElementAt(i) as SliderInt).value = stats[i];
+                (_player_stats.ElementAt(i) as SliderInt).value += stats[i];
             }
 
-            _items[(_category_selected_it as Item).Id] = selected.Id; 
+            _items[(_category_selected_it as Item).Id] = selected.Id;
+            _last_click_changed_cat = false;
         }
     }
 
