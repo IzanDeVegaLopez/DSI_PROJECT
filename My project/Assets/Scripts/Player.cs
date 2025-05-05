@@ -52,6 +52,7 @@ public class Player
     private Relic _relic;
     private Soul _soul;
     #endregion
+
     public void RecalculateParameters()
     {
         _health = _stats[Stats.Determination] * 100 + _level * 10;

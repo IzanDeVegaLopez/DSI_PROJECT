@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MainMenu.uss?fileID=7433441132597879392&amp;guid=3ffafd16613f8a547a5e99b1ba6f6502&amp;type=3#MainMenu" />
     <ui:VisualElement name="TheGodFather" style="flex-grow: 1; display: flex; visibility: visible; overflow: visible; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
-        <ui:VisualElement name="MainMenu" class="MenuContainer" style="flex-grow: 1; display: none; visibility: visible; height: 100%; width: 100%;">
+        <ui:VisualElement name="MainMenu" class="MenuContainer" style="flex-grow: 1; display: flex; visibility: visible; height: 100%; width: 100%;">
             <ui:VisualElement name="TitleSpace" style="flex-grow: 1; height: 50%; max-height: 99%;">
                 <ui:Label tabindex="-1" text="GAME NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: center; align-items: center; justify-content: flex-start; font-size: 240px; padding-top: 141px;" />
             </ui:VisualElement>
@@ -26,7 +26,7 @@
                     <Item name="3" Id="3" />
                 </ui:VisualElement>
                 <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; max-height: 45%;">
-                    <ui:VisualElement picking-mode="Ignore" name="Menu1" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
+                    <ui:VisualElement picking-mode="Ignore" name="Menu1" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: none;">
                         <Item File="Carraca" Vigor="22" Serenity="-14" Agility="30" Hope="47" Hate="-15" />
                         <Item File="Drum_Kit" Id="1" Hate="32" Hope="-26" Serenity="52" Vigor="-21" />
                         <Item File="Electric_Guitar" Id="2" Hope="25" Serenity="75" />
@@ -45,12 +45,13 @@
                         <Item File="Drum_Kit" Id="1" />
                         <Item File="Electric_Guitar" Id="2" />
                     </ui:VisualElement>
-                    <ui:VisualElement picking-mode="Ignore" name="Loadouts" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: column; display: none;">
+                    <ui:VisualElement picking-mode="Ignore" name="Loadouts" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: column; display: flex;">
                         <ui:VisualElement name="Loadout1" style="min-width: auto; min-height: 20%; flex-direction: row; background-color: rgb(221, 255, 145); margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px;">
                             <ui:VisualElement name="Load" style="flex-grow: 1; min-width: 70%; flex-direction: row;">
-                                <ui:Label tabindex="-1" text="· 1 - None" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 60px; -unity-font-style: normal; align-self: center;" />
+                                <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="font-size: 60px; -unity-font-style: normal; align-self: center;" />
                             </ui:VisualElement>
                             <ui:VisualElement name="Save" style="flex-grow: 1; background-color: rgb(110, 255, 170);" />
+                            <ui:VisualElement name="Delete" style="flex-grow: 1; background-color: rgb(255, 128, 134);" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
