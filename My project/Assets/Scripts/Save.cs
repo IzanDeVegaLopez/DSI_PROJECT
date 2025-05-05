@@ -53,15 +53,18 @@ public class Save : MonoBehaviour
         }
     }
 
-    void LoadLoadout(ClickEvent evt,int num)
+    void LoadLoadout(ClickEvent evt, int num)
     {
         //Debug.Log("Load");
+        if (File.Exists(Application.persistentDataPath + "/loadout_" + num + ".json"))
+        {
+            SaveData data = JsonHelper.FromJson(File.ReadAllText(Application.persistentDataPath + "/loadout_" + num + ".json"));
+            _iSelector.Items = data.items;
+            _iSelector.LoadLoadout(data.items);
 
-        SaveData data = JsonHelper.FromJson(File.ReadAllText(Application.persistentDataPath + "/loadout_" + num + ".json"));
-        _iSelector.Items = data.items;
-        _iSelector.LoadLoadout(data.items);
+        }
     }
-    void SaveLoadout(ClickEvent evt, int num)
+        void SaveLoadout(ClickEvent evt, int num)
     {
         //Debug.Log("Save");
         SaveData data = new();
