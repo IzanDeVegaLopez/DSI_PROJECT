@@ -206,7 +206,7 @@ public class Item : VisualElement
         this.style.marginLeft = 30;
     }
 
-    public void AssignItem(VisualElement v)
+    public Item AssignItem(VisualElement v)
     {
         Item i = v as Item;
         Nombre = i.Nombre;
@@ -218,8 +218,9 @@ public class Item : VisualElement
         Agility = i.Agility;
         Hope = i.Hope;
         Hate = i.Hate;
+        return this;
     }
-    public void AssignVoidItem()
+    public Item AssignVoidItem()
     {
         Nombre = "";
         Flavour = "";
@@ -230,6 +231,7 @@ public class Item : VisualElement
         Agility = 0;
         Hope = 0;
         Hate = 0;
+        return this;
     }
 
     public int[] getStats()

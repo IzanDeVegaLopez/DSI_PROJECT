@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -66,11 +67,12 @@ public class Save : MonoBehaviour
     }
         void SaveLoadout(ClickEvent evt, int num)
     {
+        Debug.Log(num);
         //Debug.Log("Save");
         SaveData data = new();
         data.items = _iSelector.Items; //items[2] for soul
         if (data.items[2] != -1)  data.soulname = (root.Q("Menu3").Children().ToList()[2] as Item).name;
-        root.Q("Loadouts").ElementAt(0).ElementAt(num).Q<Label>("Label").text = (num + 1).ToString() + " - " + data.soulname;
+        root.Q("Loadouts").ElementAt(num).ElementAt(0).Q<Label>("Label").text = (num + 1).ToString() + " - " + data.soulname;
        // Debug.Log(data);
         System.IO.File.WriteAllText(Application.persistentDataPath + "/loadout_" + num + ".json", JsonHelper.ToJson(data));
     }
@@ -79,7 +81,7 @@ public class Save : MonoBehaviour
         //Debug.Log("Delete");
 
         SaveData data = new();
-        root.Q("Loadouts").ElementAt(0).ElementAt(num).Q<Label>("Label").text = (num + 1).ToString() + " - None";
+        root.Q("Loadouts").ElementAt(num).ElementAt(0).Q<Label>("Label").text = (num + 1).ToString() + " - None";
 
         System.IO.File.WriteAllText(Application.persistentDataPath + "/loadout_" + num + ".json", JsonHelper.ToJson(data));
     }

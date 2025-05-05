@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -108,30 +109,35 @@ public class ItemSelector : MonoBehaviour
         }
     }
 
-    void getCurrentBuild()
-    {
-
-    }
-
     public void LoadLoadout(int[] loadout_array)
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
 
-        /*
-        string s = "";
-        foreach (int i in loadout_array)
-            s += i + " ";
-        Debug.Log(s);
-        */
-
         VisualElement selectable_cat = root.Q("SelectableCategoriesSpace");
         VisualElement selectable_it = root.Q("SelectableItemsSpace");
+        for(int j = 0; j < 6; ++j) { (_player_stats.ElementAt(j) as SliderInt).value = 0; }
         for (int i = 0; i < 3; ++i)
         {
+            /*
+            var stats = (_selected_item as Item).getStats();
+            //if (!_last_click_changed_cat){
+            for (int i = 0; i < 6; ++i)
+            {
+                (_player_stats.ElementAt(i) as SliderInt).value -= stats[i];
+            }
+            */
+
             if (loadout_array[i] >= 0)
-                (selectable_cat.ElementAt(i) as Item).AssignItem(selectable_it.ElementAt(i).ElementAt(loadout_array[i]));
+                (_selected_item as Item).AssignItem((selectable_cat.ElementAt(i) as Item).AssignItem(selectable_it.ElementAt(i).ElementAt(loadout_array[i])));
             else
-                (selectable_cat.ElementAt(i) as Item).AssignVoidItem();
+                (_selected_item as Item).AssignItem((selectable_cat.ElementAt(i) as Item).AssignVoidItem());
+
+            var stats = (_selected_item as Item).getStats();
+            for (int j = 0; j < 6; ++j)
+            {
+                //(_selected_items_stats.ElementAt(i) as SliderInt).value = stats[j];
+                (_player_stats.ElementAt(j) as SliderInt).value += stats[j];
+            }
         }
     }
 }
