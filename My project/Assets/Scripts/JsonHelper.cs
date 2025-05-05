@@ -10,7 +10,7 @@ public class SaveData
     public SaveData(string soul = "None")
     {
         soulname = soul;
-        items = new int[3];
+        items = new int[3] { -1, -1, -1 };
     }
 }
 public class JsonHelper

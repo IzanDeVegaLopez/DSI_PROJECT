@@ -35,7 +35,7 @@ public class Save : MonoBehaviour
 
             if (File.Exists(Application.persistentDataPath + "/loadout_" + temp + ".json"))
             {
-                Debug.Log("It Lives");
+                //Debug.Log("It Lives");
                 data = JsonHelper.FromJson(File.ReadAllText(Application.persistentDataPath + "/loadout_" + temp + ".json"));
             }
 
@@ -67,7 +67,7 @@ public class Save : MonoBehaviour
         SaveData data = new();
         data.items = _iSelector.Items; //items[2] for soul
         if (data.items[2] != -1)  data.soulname = (root.Q("Menu3").Children().ToList()[2] as Item).name;
-        root.Q("Loadout"+(num+1).ToString()).Q<Label>("Label").text = (num + 1).ToString() + " - " + data.soulname;
+        root.Q("Loadouts").ElementAt(num).Q<Label>("Label").text = (num + 1).ToString() + " - " + data.soulname;
        // Debug.Log(data);
         System.IO.File.WriteAllText(Application.persistentDataPath + "/loadout_" + num + ".json", JsonHelper.ToJson(data));
     }
@@ -76,7 +76,7 @@ public class Save : MonoBehaviour
         //Debug.Log("Delete");
 
         SaveData data = new();
-        root.Q("Loadout" + (num + 1).ToString()).Q<Label>("Label").text = (num + 1).ToString() + " - None";
+        root.Q("Loadouts").ElementAt(num).Q<Label>("Label").text = (num + 1).ToString() + " - None";
 
         System.IO.File.WriteAllText(Application.persistentDataPath + "/loadout_" + num + ".json", JsonHelper.ToJson(data));
     }
