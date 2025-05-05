@@ -43,11 +43,11 @@ public class Save : MonoBehaviour
             //Debug.Log("fullname: " + (temp+1).ToString() + " - " + data.soulname);
 
             visualElement.ElementAt(0).Q<Label>("Label").text = (temp + 1).ToString() + " - " + data.soulname; // TODO: Connect to loadout soul name
-            visualElement.ElementAt(0).RegisterCallback<ClickEvent, int>(LoadLoadout, temp);
+            visualElement.ElementAt(0).ElementAt(0).RegisterCallback<ClickEvent, int>(LoadLoadout, temp);
 
-            visualElement.ElementAt(1).RegisterCallback<ClickEvent, int>(SaveLoadout, temp);
+            visualElement.ElementAt(0).ElementAt(1).RegisterCallback<ClickEvent, int>(SaveLoadout, temp);
 
-            visualElement.ElementAt(2).RegisterCallback<ClickEvent, int>(DeleteLoadout, temp);
+            visualElement.ElementAt(0).ElementAt(2).RegisterCallback<ClickEvent, int>(DeleteLoadout, temp);
 
             i++;
         }
@@ -70,7 +70,7 @@ public class Save : MonoBehaviour
         SaveData data = new();
         data.items = _iSelector.Items; //items[2] for soul
         if (data.items[2] != -1)  data.soulname = (root.Q("Menu3").Children().ToList()[2] as Item).name;
-        root.Q("Loadouts").ElementAt(num).Q<Label>("Label").text = (num + 1).ToString() + " - " + data.soulname;
+        root.Q("Loadouts").ElementAt(0).ElementAt(num).Q<Label>("Label").text = (num + 1).ToString() + " - " + data.soulname;
        // Debug.Log(data);
         System.IO.File.WriteAllText(Application.persistentDataPath + "/loadout_" + num + ".json", JsonHelper.ToJson(data));
     }
@@ -79,7 +79,7 @@ public class Save : MonoBehaviour
         //Debug.Log("Delete");
 
         SaveData data = new();
-        root.Q("Loadouts").ElementAt(num).Q<Label>("Label").text = (num + 1).ToString() + " - None";
+        root.Q("Loadouts").ElementAt(0).ElementAt(num).Q<Label>("Label").text = (num + 1).ToString() + " - None";
 
         System.IO.File.WriteAllText(Application.persistentDataPath + "/loadout_" + num + ".json", JsonHelper.ToJson(data));
     }
