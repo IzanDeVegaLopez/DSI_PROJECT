@@ -2,10 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public struct SaveData
+[Serializable]
+public class SaveData
 {
     public string soulname;
     public int[] items;
+    public SaveData(string soul = "None")
+    {
+        soulname = soul;
+        items = new int[3];
+    }
 }
 public class JsonHelper
 {
