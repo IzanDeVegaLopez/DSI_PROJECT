@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="Loadout" style="min-width: auto; min-height: 20%; flex-direction: row; background-color: rgb(221, 255, 145); margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px;">
+        <ui:VisualElement name="Load" style="flex-grow: 1; min-width: 70%; flex-direction: row;">
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="font-size: 60px; -unity-font-style: normal; align-self: center;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Save" style="flex-grow: 1; background-color: rgb(110, 255, 170);" />
+        <ui:VisualElement name="Delete" style="flex-grow: 1; background-color: rgb(255, 128, 134);" />
+    </ui:VisualElement>
+</ui:UXML>
