@@ -2,20 +2,24 @@
     <ui:Template name="Loadout" src="project://database/Assets/Loadout.uxml?fileID=9197481963319205126&amp;guid=23c7abb8781b7914b971884175b13130&amp;type=3#Loadout" />
     <Style src="project://database/Assets/MainMenu.uss?fileID=7433441132597879392&amp;guid=3ffafd16613f8a547a5e99b1ba6f6502&amp;type=3#MainMenu" />
     <ui:VisualElement name="TheGodFather" style="flex-grow: 1; display: flex; visibility: visible; overflow: visible; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; background-color: rgb(240, 239, 230);">
-        <ui:VisualElement name="MainMenu" class="MenuContainer" style="flex-grow: 1; display: none; visibility: visible; height: 100%; width: 100%;">
+        <ui:VisualElement name="MainMenu" class="MenuContainer" style="flex-grow: 1; display: flex; visibility: visible; height: 100%; width: 100%;">
             <ui:VisualElement name="TitleSpace" style="flex-grow: 1; height: 50%; max-height: 99%;">
                 <ui:Label tabindex="-1" text="GAME NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: center; align-items: center; justify-content: flex-start; font-size: 240px; padding-top: 141px;" />
             </ui:VisualElement>
             <ui:VisualElement name="ButtonsSpaceV" style="flex-grow: 1; flex-direction: row;">
-                <ui:VisualElement name="PaddingLeft" style="flex-grow: 1;" />
-                <ui:VisualElement name="ButtonsSpaceH" style="flex-grow: 1;">
+                <ui:VisualElement name="PaddingLeft" style="flex-grow: 1; width: 30%; max-width: 30%;">
+                    <ui:VisualElement name="DraggableIt1" style="flex-grow: initial; width: 40px; height: 40px; flex-shrink: initial; -unity-background-image-tint-color: rgb(255, 0, 0); background-color: rgb(255, 0, 0); margin-left: 0; margin-top: 0;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="ButtonsSpaceH" picking-mode="Ignore" style="flex-grow: 1; width: 40%; max-width: 40%;">
                     <ui:Button text="Start Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartGameButton" class="MainMenuButton" />
                     <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" class="MainMenuButton" />
                 </ui:VisualElement>
-                <ui:VisualElement name="PaddingRight" style="flex-grow: 1;" />
+                <ui:VisualElement name="PaddingRight" style="flex-grow: 1; max-width: 30%;">
+                    <ui:VisualElement name="DraggableIt2" style="flex-grow: initial; width: 40px; height: 40px; flex-shrink: initial; -unity-background-image-tint-color: rgb(255, 0, 0); background-color: rgb(255, 0, 0); margin-left: 0; margin-top: 0; align-items: flex-start; align-self: flex-start;" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="EquipmentMenu" class="MenuContainer" style="flex-grow: 1; flex-direction: column; display: flex; visibility: visible;">
+        <ui:VisualElement name="EquipmentMenu" class="MenuContainer" style="flex-grow: 1; flex-direction: column; display: none; visibility: visible;">
             <ui:VisualElement name="TitleSpace" style="flex-grow: 1; flex-direction: row; min-height: 15%;">
                 <ui:VisualElement name="MenuTitleSpace" style="flex-grow: 1; height: 20%; max-height: 15%;">
                     <ui:Label tabindex="-1" text="// EQUIPMENT" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 89px; margin-left: 60px; margin-top: 20px; color: rgb(167, 151, 148);" />
