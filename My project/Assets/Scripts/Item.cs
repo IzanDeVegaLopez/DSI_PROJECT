@@ -196,10 +196,8 @@ public class Item : VisualElement
     {
         this.style.width =
             this.style.height =
-            this.style.maxWidth =
-            this.style.maxHeight =
             this.style.minWidth =
-            this.style.minHeight = 200;
+            this.style.minHeight = 150;
 
         this.style.backgroundImage = Resources.Load<Texture2D>(file);
         this.style.backgroundColor = new Color(160f / 255, 146f / 255, 134f / 255,1);
