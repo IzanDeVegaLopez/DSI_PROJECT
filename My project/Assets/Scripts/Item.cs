@@ -194,16 +194,26 @@ public class Item : VisualElement
 
     public Item()
     {
-        this.style.width = 200;
-        this.style.height = 200;
+        this.style.width =
+            this.style.height =
+            this.style.maxWidth =
+            this.style.maxHeight =
+            this.style.minWidth =
+            this.style.minHeight = 200;
+
         this.style.backgroundImage = Resources.Load<Texture2D>(file);
-        this.style.backgroundColor = new Color(162f/255, 229f/255, 115f/255,1);
+        this.style.backgroundColor = new Color(160f / 255, 146f / 255, 134f / 255,1);
         this.style.alignItems = Align.Stretch;
         this.style.justifyContent = Justify.FlexStart;
         this.style.alignSelf = Align.Auto;
 
         this.style.marginTop = 30;
         this.style.marginLeft = 30;
+
+        this.style.borderLeftColor =
+            this.style.borderRightColor =
+            this.style.borderTopColor =
+            this.style.borderBottomColor = new Color(72f / 255, 59f / 255, 51f / 255, 1);
     }
 
     public Item AssignItem(VisualElement v)

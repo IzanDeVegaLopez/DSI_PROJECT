@@ -14,6 +14,12 @@ public class ItemSelector : MonoBehaviour
     VisualElement _player_stats;
     bool _last_click_changed_cat = true;
 
+    public string Soulname
+    {
+        get { return _soulname; }
+        set { _soulname = value; }
+    }
+    private string _soulname = "None";
     public int[] Items
     {
         get { return _items; }
@@ -29,7 +35,11 @@ public class ItemSelector : MonoBehaviour
         VisualElement equipment_menu = root.Q("EquipmentMenu");
         VisualElement selectable_cat = equipment_menu.Q("SelectableCategoriesSpace");
         _category_selected_it = selectable_cat.ElementAt(0);
-        _category_selected_it.style.backgroundColor = new Color(1, 0, 0, 1);
+        _category_selected_it.style.borderLeftWidth =
+                _category_selected_it.style.borderRightWidth =
+                _category_selected_it.style.borderTopWidth =
+                _category_selected_it.style.borderBottomWidth = 10;
+        //_category_selected_it.style.backgroundColor = new Color(1, 0, 0, 1);
         selectable_cat.RegisterCallback<ClickEvent>(seleccionaCategoria);
         VisualElement selectable_it = equipment_menu.Q("SelectableItemsSpace");
         selectable_it.RegisterCallback<ClickEvent>(seleccionaItem);
@@ -57,9 +67,19 @@ public class ItemSelector : MonoBehaviour
         VisualElement miTarjeta = evt.target as VisualElement;
         if (miTarjeta is Item)
         {
-            _category_selected_it.style.backgroundColor = new Color(162f / 255, 229f / 255, 115f / 255, 1);
+            _category_selected_it.style.borderLeftWidth =
+                _category_selected_it.style.borderRightWidth =
+                _category_selected_it.style.borderTopWidth =
+                _category_selected_it.style.borderBottomWidth = 0;
+
             _category_selected_it = miTarjeta as Item;
-            _category_selected_it.style.backgroundColor = new Color(1, 0, 0, 1);
+
+            _category_selected_it.style.borderLeftWidth =
+                _category_selected_it.style.borderRightWidth =
+                _category_selected_it.style.borderTopWidth =
+                _category_selected_it.style.borderBottomWidth = 10;
+
+
 
             int[] stats;
 
@@ -105,6 +125,8 @@ public class ItemSelector : MonoBehaviour
 
             Debug.Log(selected.Id);
             _items[(_category_selected_it as Item).Id] = selected.Id;
+            if ((_category_selected_it as Item).Id == 2) _soulname = selected.Nombre;
+
             _last_click_changed_cat = false;
         }
     }

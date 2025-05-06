@@ -74,9 +74,9 @@ public class Save : MonoBehaviour
         //Debug.Log("Save");
         SaveData data = new();
         data.items = _iSelector.Items; //items[2] for soul
-        if (data.items[2] != -1)  data.soulname = (root.Q("Menu3").Children().ToList()[2] as Item).name;
+        if (data.items[2] != -1)  data.soulname = _iSelector.Soulname;
         root.Q("Loadouts").ElementAt(num).ElementAt(0).Q<Label>("Label").text = (num + 1).ToString() + " - " + data.soulname;
-       // Debug.Log(data);
+        Debug.Log(data.soulname);
         System.IO.File.WriteAllText(Application.persistentDataPath + "/loadout_" + num + ".json", JsonHelper.ToJson(data));
     }
     void DeleteLoadout(ClickEvent evt, int num)

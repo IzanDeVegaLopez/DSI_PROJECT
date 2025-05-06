@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="Loadout" src="project://database/Assets/Loadout.uxml?fileID=9197481963319205126&amp;guid=23c7abb8781b7914b971884175b13130&amp;type=3#Loadout" />
     <Style src="project://database/Assets/MainMenu.uss?fileID=7433441132597879392&amp;guid=3ffafd16613f8a547a5e99b1ba6f6502&amp;type=3#MainMenu" />
-    <ui:VisualElement name="TheGodFather" style="flex-grow: 1; display: flex; visibility: visible; overflow: visible; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+    <ui:VisualElement name="TheGodFather" style="flex-grow: 1; display: flex; visibility: visible; overflow: visible; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; background-color: rgb(240, 239, 230);">
         <ui:VisualElement name="MainMenu" class="MenuContainer" style="flex-grow: 1; display: none; visibility: visible; height: 100%; width: 100%;">
             <ui:VisualElement name="TitleSpace" style="flex-grow: 1; height: 50%; max-height: 99%;">
                 <ui:Label tabindex="-1" text="GAME NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: center; align-items: center; justify-content: flex-start; font-size: 240px; padding-top: 141px;" />
@@ -15,71 +15,73 @@
                 <ui:VisualElement name="PaddingRight" style="flex-grow: 1;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="EquipmentMenu" class="MenuContainer" style="flex-grow: 1; flex-direction: row; display: flex; visibility: visible;">
-            <ui:VisualElement name="LSpace" style="flex-grow: 1; height: 100%; max-width: 50%; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+        <ui:VisualElement name="EquipmentMenu" class="MenuContainer" style="flex-grow: 1; flex-direction: column; display: flex; visibility: visible;">
+            <ui:VisualElement name="TitleSpace" style="flex-grow: 1; flex-direction: row; min-height: 15%;">
                 <ui:VisualElement name="MenuTitleSpace" style="flex-grow: 1; height: 20%; max-height: 15%;">
-                    <ui:Label tabindex="-1" text="//Equipment" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 89px; margin-left: 60px; margin-top: 20px;" />
+                    <ui:Label tabindex="-1" text="// EQUIPMENT" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 89px; margin-left: 60px; margin-top: 20px; color: rgb(167, 151, 148);" />
                 </ui:VisualElement>
-                <ui:VisualElement name="SelectableCategoriesSpace" style="flex-grow: 1; max-height: 25%; flex-direction: row;">
-                    <Item name="0" />
-                    <Item name="1" Id="1" />
-                    <Item name="2" Id="2" />
-                    <Item name="3" Id="3" />
-                </ui:VisualElement>
-                <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; max-height: 45%;">
-                    <ui:VisualElement picking-mode="Ignore" name="Menu1" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: none;">
-                        <Item File="Carraca" Vigor="22" Serenity="-14" Agility="30" Hope="47" Hate="-15" />
-                        <Item File="Drum_Kit" Id="1" Hate="32" Hope="-26" Serenity="52" Vigor="-21" />
-                        <Item File="Electric_Guitar" Id="2" Hope="25" Serenity="75" />
-                        <Item File="Golden_Lute" Id="3" Hope="42" Serenity="-84" />
-                        <Item File="Gong" Id="4" Agility="-63" Serenity="-37" />
-                        <Item File="Microphone" Id="5" Hope="-53" Agility="35" />
-                        <Item File="Kazoo" Id="6" Hope="74" Vigor="68" Serenity="-32" Agility="-16" />
-                    </ui:VisualElement>
-                    <ui:VisualElement picking-mode="Ignore" name="Menu2" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
-                        <Item File="Carraca" Vigor="36" Serenity="-22" Agility="45" Hate="-16" Determination="1" />
-                        <Item File="Drum_Kit" Id="1" Hope="34" Agility="-34" Vigor="-24" />
-                        <Item File="Electric_Guitar" Id="2" Hope="42" Agility="-31" Serenity="-23" />
-                    </ui:VisualElement>
-                    <ui:VisualElement picking-mode="Ignore" name="Menu3" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
-                        <Item File="Carraca" Hope="56" Agility="-44" Serenity="-43" Hate="71" />
-                        <Item File="Drum_Kit" Id="1" />
-                        <Item File="Electric_Guitar" Id="2" />
-                    </ui:VisualElement>
-                    <ui:VisualElement picking-mode="Ignore" name="Loadouts" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: column; display: flex;">
-                        <ui:Instance template="Loadout" name="Loadout" />
-                        <ui:Instance template="Loadout" name="Loadout" />
-                        <ui:Instance template="Loadout" name="Loadout" />
-                    </ui:VisualElement>
-                </ui:VisualElement>
-                <ui:VisualElement name="ReturnButtonSpace" style="flex-grow: 1;">
-                    <ui:Button text="Return" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EquipmentReturn" style="align-self: flex-start; align-items: center; font-size: 40px; margin-left: 30px; margin-top: 36px;" />
-                </ui:VisualElement>
+                <ui:VisualElement name="EquipmentReturn" class="xButton" style="margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;" />
             </ui:VisualElement>
-            <ui:VisualElement name="RSpace" style="flex-grow: 1; flex-direction: row; width: 50%; max-width: 50%;">
-                <ui:VisualElement name="CurrentSelectedItemSpace" style="flex-grow: 1; width: 50%; max-width: 50%;">
-                    <ui:VisualElement name="UppertextSpace" style="flex-grow: 1; max-height: 25%;" />
-                    <ui:VisualElement name="CurrentSelectedItemMidSpace" style="flex-grow: 1; align-items: center; justify-content: flex-start; align-self: center; height: 200px; max-height: 300px;">
-                        <Item />
+            <ui:VisualElement name="ContentSpace" style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="LSpace" style="flex-grow: 1; height: 100%; max-width: 50%; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+                    <ui:VisualElement name="SelectableCategoriesSpace" style="flex-grow: 1; max-height: 25%; flex-direction: row;">
+                        <Item name="0" />
+                        <Item name="1" Id="1" />
+                        <Item name="2" Id="2" />
+                        <Item name="3" Id="3" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="SelectedItemStats" style="flex-grow: 1; max-height: 55%;">
-                        <ui:SliderInt label="Determination" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Vigor" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Serenity" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Agility" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Hope" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Hate" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" />
+                    <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; max-height: 45%;">
+                        <ui:VisualElement picking-mode="Ignore" name="Menu1" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: none;">
+                            <Item File="Carraca" Vigor="22" Serenity="-14" Agility="30" Hope="47" Hate="-15" />
+                            <Item File="Drum_Kit" Id="1" Hate="32" Hope="-26" Serenity="52" Vigor="-21" />
+                            <Item File="Electric_Guitar" Id="2" Hope="25" Serenity="75" />
+                            <Item File="Golden_Lute" Id="3" Hope="42" Serenity="-84" />
+                            <Item File="Gong" Id="4" Agility="-63" Serenity="-37" />
+                            <Item File="Microphone" Id="5" Hope="-53" Agility="35" />
+                            <Item File="Kazoo" Id="6" Hope="74" Vigor="68" Serenity="-32" Agility="-16" />
+                        </ui:VisualElement>
+                        <ui:VisualElement picking-mode="Ignore" name="Menu2" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
+                            <Item File="Carraca" Vigor="36" Serenity="-22" Agility="45" Hate="-16" Determination="1" />
+                            <Item File="Drum_Kit" Id="1" Hope="34" Agility="-34" Vigor="-24" />
+                            <Item File="Electric_Guitar" Id="2" Hope="42" Agility="-31" Serenity="-23" />
+                        </ui:VisualElement>
+                        <ui:VisualElement picking-mode="Ignore" name="Menu3" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
+                            <Item File="Carraca" Hope="56" Agility="-44" Serenity="-43" Hate="71" />
+                            <Item File="Drum_Kit" Id="1" />
+                            <Item File="Electric_Guitar" Id="2" />
+                        </ui:VisualElement>
+                        <ui:VisualElement picking-mode="Ignore" name="Loadouts" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: column; display: flex;">
+                            <ui:Instance template="Loadout" name="Loadout" />
+                            <ui:Instance template="Loadout" name="Loadout" />
+                            <ui:Instance template="Loadout" name="Loadout" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="StatsSpace" style="flex-grow: 1; max-width: 50%;">
-                    <ui:Label tabindex="-1" text="//Player Stats" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 60px; margin-top: 54px; margin-left: 20px;" />
-                    <ui:VisualElement name="PlayerStats" style="flex-grow: 1; max-height: 55%;">
-                        <ui:SliderInt label="Determination" high-value="200" low-value="-200" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Vigor" high-value="200" low-value="-200" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Serenity" high-value="200" low-value="-200" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Agility" high-value="200" low-value="-200" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Hope" high-value="200" low-value="-200" name="SliderInt" show-input-field="true" />
-                        <ui:SliderInt label="Hate" high-value="200" low-value="-200" name="SliderInt" show-input-field="true" />
+                <ui:VisualElement name="RSpace" style="flex-grow: 1; flex-direction: row; width: 50%; max-width: 50%;">
+                    <ui:VisualElement name="CurrentSelectedItemSpace" style="flex-grow: 1; width: 50%; max-width: 50%;">
+                        <ui:VisualElement name="UppertextSpace" style="flex-grow: 1; max-height: 25%;" />
+                        <ui:VisualElement name="CurrentSelectedItemMidSpace" style="flex-grow: 1; align-items: center; justify-content: flex-start; align-self: center; height: 200px; max-height: 300px;">
+                            <Item />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="SelectedItemStats" style="flex-grow: 1; max-height: 55%;">
+                            <ui:SliderInt label="Determination" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(79, 125, 79);" />
+                            <ui:SliderInt label="Vigor" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(143, 67, 67);" />
+                            <ui:SliderInt label="Serenity" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(65, 64, 129);" />
+                            <ui:SliderInt label="Agility" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(71, 128, 135);" />
+                            <ui:SliderInt label="Hope" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(183, 163, 99);" />
+                            <ui:SliderInt label="Hate" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(144, 79, 135);" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="StatsSpace" style="flex-grow: 1; max-width: 50%;">
+                        <ui:Label tabindex="-1" text="// STATS" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 60px; margin-top: 54px; margin-left: 20px; -unity-font-style: normal; -unity-font: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=0894ce9309d4c354494f6727253f9366&amp;type=3#NotInter-Regular&quot;); color: rgb(167, 151, 148);" />
+                        <ui:VisualElement name="PlayerStats" style="flex-grow: 1; max-height: 55%;">
+                            <ui:SliderInt label="Determination" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(79, 125, 79);" />
+                            <ui:SliderInt label="Vigor" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(143, 67, 67);" />
+                            <ui:SliderInt label="Serenity" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(65, 64, 129);" />
+                            <ui:SliderInt label="Agility" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(71, 128, 135);" />
+                            <ui:SliderInt label="Hope" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(183, 163, 99);" />
+                            <ui:SliderInt label="Hate" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(144, 79, 135);" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
