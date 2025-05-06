@@ -81,12 +81,12 @@
                     <ui:VisualElement name="StatsSpace" style="flex-grow: 1; max-width: 50%;">
                         <ui:Label tabindex="-1" text="// STATS" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 60px; margin-top: 54px; margin-left: 20px; -unity-font-style: normal; -unity-font: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=0894ce9309d4c354494f6727253f9366&amp;type=3#NotInter-Regular&quot;); color: rgb(167, 151, 148);" />
                         <ui:VisualElement name="PlayerStats" style="flex-grow: 1; max-height: 55%;">
-                            <ui:SliderInt label="Determination" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(79, 125, 79);" />
-                            <ui:SliderInt label="Vigor" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(143, 67, 67);" />
-                            <ui:SliderInt label="Serenity" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(65, 64, 129);" />
-                            <ui:SliderInt label="Agility" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(71, 128, 135);" />
-                            <ui:SliderInt label="Hope" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(183, 163, 99);" />
-                            <ui:SliderInt label="Hate" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(144, 79, 135);" />
+                            <ui:SliderInt label="Determination" high-value="150" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(79, 125, 79);" />
+                            <ui:SliderInt label="Vigor" high-value="150" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(143, 67, 67);" />
+                            <ui:SliderInt label="Serenity" high-value="150" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(65, 64, 129);" />
+                            <ui:SliderInt label="Agility" high-value="150" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(71, 128, 135);" />
+                            <ui:SliderInt label="Hope" high-value="150" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(183, 163, 99);" />
+                            <ui:SliderInt label="Hate" high-value="150" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(144, 79, 135);" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
