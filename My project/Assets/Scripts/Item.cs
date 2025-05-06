@@ -205,8 +205,10 @@ public class Item : VisualElement
         this.style.justifyContent = Justify.FlexStart;
         this.style.alignSelf = Align.Auto;
 
-        this.style.marginTop = 30;
-        this.style.marginLeft = 30;
+        this.style.marginTop =
+        this.style.marginLeft =
+        this.style.marginTop =
+        this.style.marginBottom = 15;
 
         this.style.borderLeftColor =
             this.style.borderRightColor =
