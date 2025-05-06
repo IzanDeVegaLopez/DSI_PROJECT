@@ -2,7 +2,7 @@
     <ui:Template name="Loadout" src="project://database/Assets/Loadout.uxml?fileID=9197481963319205126&amp;guid=23c7abb8781b7914b971884175b13130&amp;type=3#Loadout" />
     <Style src="project://database/Assets/MainMenu.uss?fileID=7433441132597879392&amp;guid=3ffafd16613f8a547a5e99b1ba6f6502&amp;type=3#MainMenu" />
     <ui:VisualElement name="TheGodFather" style="flex-grow: 1; display: flex; visibility: visible; overflow: visible; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; background-color: rgb(240, 239, 230);">
-        <ui:VisualElement name="MainMenu" class="MenuContainer" style="flex-grow: 1; display: flex; visibility: visible; height: 100%; width: 100%;">
+        <ui:VisualElement name="MainMenu" class="MenuContainer" style="flex-grow: 1; display: none; visibility: visible; height: 100%; width: 100%;">
             <ui:VisualElement name="TitleSpace" style="flex-grow: 1; height: 50%; max-height: 99%;">
                 <ui:Label tabindex="-1" text="GAME NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: center; align-items: center; justify-content: flex-start; font-size: 240px; padding-top: 141px;" />
             </ui:VisualElement>
@@ -19,7 +19,7 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="EquipmentMenu" class="MenuContainer" style="flex-grow: 1; flex-direction: column; display: none; visibility: visible;">
+        <ui:VisualElement name="EquipmentMenu" class="MenuContainer" style="flex-grow: 1; flex-direction: column; display: flex; visibility: visible;">
             <ui:VisualElement name="TitleSpace" style="flex-grow: 1; flex-direction: row; min-height: 15%;">
                 <ui:VisualElement name="MenuTitleSpace" style="flex-grow: 1; height: 20%; max-height: 15%;">
                     <ui:Label tabindex="-1" text="// EQUIPMENT" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 89px; margin-left: 60px; margin-top: 20px; color: rgb(167, 151, 148);" />
@@ -36,22 +36,22 @@
                     </ui:VisualElement>
                     <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; max-height: 45%;">
                         <ui:VisualElement picking-mode="Ignore" name="Menu1" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
-                            <Item File="Weapons/Banana" Vigor="22" Serenity="-14" Agility="30" Hope="47" Hate="-15" />
-                            <Item File="Weapons/Bartolomero" Id="1" Hate="32" Hope="-26" Serenity="52" Vigor="-21" />
-                            <Item File="Weapons/Saturday Night" Id="2" Hope="25" Serenity="75" />
-                            <Item File="Weapons/Tarrare" Id="3" Hope="42" Serenity="-84" />
-                            <Item File="Weapons/The Sandman" Id="4" Agility="-63" Serenity="-37" />
-                            <Item File="Weapons/The Throngler" Id="5" Hope="-53" Agility="35" />
+                            <Item File="Weapons/Banana" Vigor="30" Serenity="35" Agility="20" Hope="15" Nombre="Banana" />
+                            <Item File="Weapons/Bartolomero" Id="1" Hate="50" Vigor="35" Agility="25" Nombre="Bartolomero" />
+                            <Item File="Weapons/Saturday Night" Id="2" Serenity="30" Hate="40" Determination="30" Nombre="Saturday Night" />
+                            <Item File="Weapons/Tarrare" Id="3" Determination="50" Vigor="20" Serenity="30" Nombre="Tarrare" />
+                            <Item File="Weapons/The Sandman" Id="4" Serenity="50" Hope="20" Determination="30" Nombre="The Sandman" />
+                            <Item File="Weapons/The Throngler" Id="5" Hate="30" Vigor="30" Determination="50" Nombre="The Throngler" />
                         </ui:VisualElement>
                         <ui:VisualElement picking-mode="Ignore" name="Menu2" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
-                            <Item File="Relics/clock" Vigor="36" Serenity="-22" Agility="45" Hate="-16" Determination="1" />
-                            <Item File="Relics/starfish" Id="1" Hope="34" Agility="-34" Vigor="-24" />
-                            <Item File="Relics/torch" Id="2" Hope="42" Agility="-31" Serenity="-23" />
+                            <Item File="Relics/clock" Vigor="20" Serenity="30" Hate="10" Hope="10" Agility="30" Nombre="Tempus Fugit" />
+                            <Item File="Relics/starfish" Id="1" Serenity="15" Determination="40" Hope="30" Vigor="15" Nombre="Oceanic Boon" />
+                            <Item File="Relics/torch" Id="2" Hope="30" Serenity="20" Vigor="30" Determination="10" Nombre="The Flame Unending" Agility="10" />
                         </ui:VisualElement>
                         <ui:VisualElement picking-mode="Ignore" name="Menu3" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
-                            <Item File="Souls/Izerin" Hope="56" Agility="-44" Serenity="-43" Hate="71" Nombre="Izerin" />
-                            <Item File="Souls/Qohr" Id="1" Nombre="Qohr" />
-                            <Item File="Souls/Ykain" Id="2" Nombre="Ykain" />
+                            <Item File="Souls/Izerin" Nombre="Izerin" Hope="50" Serenity="50" />
+                            <Item File="Souls/Qohr" Id="1" Nombre="Qohr" Vigor="50" Agility="50" />
+                            <Item File="Souls/Ykain" Id="2" Nombre="Ykain" Determination="50" Hate="50" />
                         </ui:VisualElement>
                         <ui:VisualElement picking-mode="Ignore" name="Loadouts" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: column; display: flex;">
                             <ui:Instance template="Loadout" name="Loadout" />
@@ -67,23 +67,23 @@
                             <Item />
                         </ui:VisualElement>
                         <ui:VisualElement name="SelectedItemStats" style="flex-grow: 1; max-height: 55%;">
-                            <ui:SliderInt label="Determination" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(79, 125, 79);" />
-                            <ui:SliderInt label="Vigor" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(143, 67, 67);" />
-                            <ui:SliderInt label="Serenity" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(65, 64, 129);" />
-                            <ui:SliderInt label="Agility" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(71, 128, 135);" />
-                            <ui:SliderInt label="Hope" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(183, 163, 99);" />
-                            <ui:SliderInt label="Hate" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(144, 79, 135);" />
+                            <ui:SliderInt label="Determination" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(79, 125, 79);" />
+                            <ui:SliderInt label="Vigor" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(143, 67, 67);" />
+                            <ui:SliderInt label="Serenity" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(65, 64, 129);" />
+                            <ui:SliderInt label="Agility" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(71, 128, 135);" />
+                            <ui:SliderInt label="Hope" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(183, 163, 99);" />
+                            <ui:SliderInt label="Hate" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(144, 79, 135);" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement name="StatsSpace" style="flex-grow: 1; max-width: 50%;">
                         <ui:Label tabindex="-1" text="// STATS" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 60px; margin-top: 54px; margin-left: 20px; -unity-font-style: normal; -unity-font: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=0894ce9309d4c354494f6727253f9366&amp;type=3#NotInter-Regular&quot;); color: rgb(167, 151, 148);" />
                         <ui:VisualElement name="PlayerStats" style="flex-grow: 1; max-height: 55%;">
-                            <ui:SliderInt label="Determination" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(79, 125, 79);" />
-                            <ui:SliderInt label="Vigor" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(143, 67, 67);" />
-                            <ui:SliderInt label="Serenity" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(65, 64, 129);" />
-                            <ui:SliderInt label="Agility" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(71, 128, 135);" />
-                            <ui:SliderInt label="Hope" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(183, 163, 99);" />
-                            <ui:SliderInt label="Hate" high-value="50" low-value="-50" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(144, 79, 135);" />
+                            <ui:SliderInt label="Determination" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(79, 125, 79);" />
+                            <ui:SliderInt label="Vigor" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(143, 67, 67);" />
+                            <ui:SliderInt label="Serenity" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(65, 64, 129);" />
+                            <ui:SliderInt label="Agility" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(71, 128, 135);" />
+                            <ui:SliderInt label="Hope" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(183, 163, 99);" />
+                            <ui:SliderInt label="Hate" high-value="50" low-value="0" name="SliderInt" show-input-field="true" style="-unity-font-style: bold; color: rgb(144, 79, 135);" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
