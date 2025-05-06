@@ -31,19 +31,18 @@
                         <Item name="3" Id="3" />
                     </ui:VisualElement>
                     <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; max-height: 45%;">
-                        <ui:VisualElement picking-mode="Ignore" name="Menu1" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: none;">
-                            <Item File="Carraca" Vigor="22" Serenity="-14" Agility="30" Hope="47" Hate="-15" />
-                            <Item File="Drum_Kit" Id="1" Hate="32" Hope="-26" Serenity="52" Vigor="-21" />
-                            <Item File="Electric_Guitar" Id="2" Hope="25" Serenity="75" />
-                            <Item File="Golden_Lute" Id="3" Hope="42" Serenity="-84" />
-                            <Item File="Gong" Id="4" Agility="-63" Serenity="-37" />
-                            <Item File="Microphone" Id="5" Hope="-53" Agility="35" />
-                            <Item File="Kazoo" Id="6" Hope="74" Vigor="68" Serenity="-32" Agility="-16" />
+                        <ui:VisualElement picking-mode="Ignore" name="Menu1" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
+                            <Item File="Weapons/Banana" Vigor="22" Serenity="-14" Agility="30" Hope="47" Hate="-15" />
+                            <Item File="Weapons/Bartolomero" Id="1" Hate="32" Hope="-26" Serenity="52" Vigor="-21" />
+                            <Item File="Weapons/Saturday Night" Id="2" Hope="25" Serenity="75" />
+                            <Item File="Weapons/Tarrare" Id="3" Hope="42" Serenity="-84" />
+                            <Item File="Weapons/The Sandman" Id="4" Agility="-63" Serenity="-37" />
+                            <Item File="Weapons/The Throngler" Id="5" Hope="-53" Agility="35" />
                         </ui:VisualElement>
                         <ui:VisualElement picking-mode="Ignore" name="Menu2" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
-                            <Item File="Carraca" Vigor="36" Serenity="-22" Agility="45" Hate="-16" Determination="1" />
-                            <Item File="Drum_Kit" Id="1" Hope="34" Agility="-34" Vigor="-24" />
-                            <Item File="Electric_Guitar" Id="2" Hope="42" Agility="-31" Serenity="-23" />
+                            <Item File="Relics/clock" Vigor="36" Serenity="-22" Agility="45" Hate="-16" Determination="1" />
+                            <Item File="Relics/starfish" Id="1" Hope="34" Agility="-34" Vigor="-24" />
+                            <Item File="Relics/torch" Id="2" Hope="42" Agility="-31" Serenity="-23" />
                         </ui:VisualElement>
                         <ui:VisualElement picking-mode="Ignore" name="Menu3" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
                             <Item File="Souls/Izerin" Hope="56" Agility="-44" Serenity="-43" Hate="71" Nombre="Izerin" />
