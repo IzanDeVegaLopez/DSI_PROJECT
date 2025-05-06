@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -31,24 +32,26 @@ public class Save : MonoBehaviour
         int i = 0;
         foreach (VisualElement visualElement in loadouts)
         {
-            int temp = i;
+            int num = i;
             SaveData data = new();
 
-            if (File.Exists(Application.persistentDataPath + "/loadout_" + temp + ".json"))
+            if (!File.Exists(Application.persistentDataPath + "/loadout_" + num + ".json"))
             {
-                //Debug.Log("It Lives");
-                data = JsonHelper.FromJson(File.ReadAllText(Application.persistentDataPath + "/loadout_" + temp + ".json"));
+                System.IO.File.WriteAllText(Application.persistentDataPath + "/loadout_" + num + ".json", JsonHelper.ToJson(new SaveData()));
             }
+
+            data = JsonHelper.FromJson(File.ReadAllText(Application.persistentDataPath + "/loadout_" + num + ".json"));
+            
 
             //Debug.Log("soulname: " + data.soulname);
             //Debug.Log("fullname: " + (temp+1).ToString() + " - " + data.soulname);
 
-            visualElement.ElementAt(0).Q<Label>("Label").text = (temp + 1).ToString() + " - " + data.soulname; // TODO: Connect to loadout soul name
-            visualElement.ElementAt(0).ElementAt(0).RegisterCallback<ClickEvent, int>(LoadLoadout, temp);
+            visualElement.ElementAt(0).Q<Label>("Label").text = (num + 1).ToString() + " - " + data.soulname; // TODO: Connect to loadout soul name
+            visualElement.ElementAt(0).ElementAt(0).RegisterCallback<ClickEvent, int>(LoadLoadout, num);
 
-            visualElement.ElementAt(0).ElementAt(1).RegisterCallback<ClickEvent, int>(SaveLoadout, temp);
+            visualElement.ElementAt(0).ElementAt(1).RegisterCallback<ClickEvent, int>(SaveLoadout, num);
 
-            visualElement.ElementAt(0).ElementAt(2).RegisterCallback<ClickEvent, int>(DeleteLoadout, temp);
+            visualElement.ElementAt(0).ElementAt(2).RegisterCallback<ClickEvent, int>(DeleteLoadout, num);
 
             i++;
         }
