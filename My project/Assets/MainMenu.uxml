@@ -32,26 +32,26 @@
                         <Item name="0" />
                         <Item name="1" Id="1" />
                         <Item name="2" Id="2" />
-                        <Item name="3" Id="3" />
+                        <Item name="3" Id="3" Nombre="Save" File="save" style="-unity-background-image-tint-color: rgb(0, 0, 0);" />
                     </ui:VisualElement>
                     <ui:VisualElement name="SelectableItemsSpace" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; max-height: 45%;">
                         <ui:VisualElement picking-mode="Ignore" name="Menu1" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
-                            <Item File="Weapons/Banana" Vigor="30" Serenity="35" Agility="20" Hope="15" Nombre="Banana" />
-                            <Item File="Weapons/Bartolomero" Id="1" Hate="50" Vigor="35" Agility="25" Nombre="Bartolomero" />
-                            <Item File="Weapons/Saturday Night" Id="2" Serenity="30" Hate="40" Determination="30" Nombre="Saturday Night" />
-                            <Item File="Weapons/Tarrare" Id="3" Determination="50" Vigor="20" Serenity="30" Nombre="Tarrare" />
-                            <Item File="Weapons/The Sandman" Id="4" Serenity="50" Hope="20" Determination="30" Nombre="The Sandman" />
-                            <Item File="Weapons/The Throngler" Id="5" Hate="30" Vigor="30" Determination="50" Nombre="The Throngler" />
+                            <Item File="Weapons/Banana" Vigor="30" Serenity="35" Agility="20" Hope="15" Nombre="Banana" Flavour="Potassium!" />
+                            <Item File="Weapons/Bartolomero" Id="1" Hate="50" Vigor="35" Agility="25" Nombre="Bartolomero" Flavour="&quot;HATE. HATE.&quot;" />
+                            <Item File="Weapons/Saturday Night" Id="2" Serenity="30" Hate="40" Determination="30" Nombre="Saturday Night" Flavour="Right Back at Ya!" />
+                            <Item File="Weapons/Tarrare" Id="3" Determination="50" Vigor="20" Serenity="30" Nombre="Tarrare" Flavour="Only A Spoonful" />
+                            <Item File="Weapons/The Sandman" Id="4" Serenity="50" Hope="20" Determination="30" Nombre="The Sandman" Flavour="Sleep Tight" />
+                            <Item File="Weapons/The Throngler" Id="5" Hate="30" Vigor="30" Determination="50" Nombre="The Throngler" Flavour="Bane Of Grûtmore" />
                         </ui:VisualElement>
                         <ui:VisualElement picking-mode="Ignore" name="Menu2" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
-                            <Item File="Relics/clock" Vigor="20" Serenity="30" Hate="10" Hope="10" Agility="30" Nombre="Tempus Fugit" />
-                            <Item File="Relics/starfish" Id="1" Serenity="15" Determination="40" Hope="30" Vigor="15" Nombre="Oceanic Boon" />
-                            <Item File="Relics/torch" Id="2" Hope="30" Serenity="20" Vigor="30" Determination="10" Nombre="The Flame Unending" Agility="10" />
+                            <Item File="Relics/clock" Vigor="20" Serenity="30" Hate="10" Hope="10" Agility="30" Nombre="Tempus Fugit" Flavour="Fleeting, Eternal" />
+                            <Item File="Relics/starfish" Id="1" Serenity="15" Determination="40" Hope="30" Vigor="15" Nombre="Oceanic Boon" Flavour="&quot;Sing to me, waves&quot;" />
+                            <Item File="Relics/torch" Id="2" Hope="30" Serenity="20" Vigor="30" Determination="10" Nombre="The Flame Unending" Agility="10" Flavour="Carry On" />
                         </ui:VisualElement>
                         <ui:VisualElement picking-mode="Ignore" name="Menu3" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
-                            <Item File="Souls/Izerin" Nombre="Izerin" Hope="50" Serenity="50" />
-                            <Item File="Souls/Qohr" Id="1" Nombre="Qohr" Vigor="50" Agility="50" />
-                            <Item File="Souls/Ykain" Id="2" Nombre="Ykain" Determination="50" Hate="50" />
+                            <Item File="Souls/Izerin" Nombre="Izerin" Hope="50" Serenity="50" Flavour="Soul of the Sage" />
+                            <Item File="Souls/Qohr" Id="1" Nombre="Qohr" Vigor="50" Agility="50" Flavour="Soul of the Daredevil" />
+                            <Item File="Souls/Ykain" Id="2" Nombre="Ykain" Determination="50" Hate="50" Flavour="Soul of the Harrower" />
                         </ui:VisualElement>
                         <ui:VisualElement picking-mode="Ignore" name="Loadouts" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: column; display: flex;">
                             <ui:Instance template="Loadout" name="Loadout" />
@@ -62,7 +62,10 @@
                 </ui:VisualElement>
                 <ui:VisualElement name="RSpace" style="flex-grow: 1; flex-direction: row; width: 50%; max-width: 50%;">
                     <ui:VisualElement name="CurrentSelectedItemSpace" style="flex-grow: 1; width: 50%; max-width: 50%;">
-                        <ui:VisualElement name="UppertextSpace" style="flex-grow: 1; max-height: 25%;" />
+                        <ui:VisualElement name="UppertextSpace" style="flex-grow: 1; max-height: 25%;">
+                            <ui:Label tabindex="-1" text="// NONE" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ItemName" style="font-size: 48px; color: rgb(72, 59, 51); -unity-font-style: bold;" />
+                            <ui:Label tabindex="-1" text="// Void" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ItemFlavour" style="font-size: 26px; color: rgb(167, 151, 148); -unity-font-style: bold;" />
+                        </ui:VisualElement>
                         <ui:VisualElement name="CurrentSelectedItemMidSpace" style="flex-grow: 1; align-items: center; justify-content: flex-start; align-self: center; height: 200px; max-height: 300px;">
                             <Item />
                         </ui:VisualElement>

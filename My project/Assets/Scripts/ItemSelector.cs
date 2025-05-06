@@ -12,6 +12,8 @@ public class ItemSelector : MonoBehaviour
     VisualElement _category_selected_it;
     VisualElement _selected_items_stats;
     VisualElement _player_stats;
+    Label _item_name;
+    Label _item_flavour;
     bool _last_click_changed_cat = true;
 
     public string Soulname
@@ -56,6 +58,8 @@ public class ItemSelector : MonoBehaviour
         (_selected_item as Item).AssignItem(_category_selected_it as Item);
         _selected_items_stats = equipment_menu.Q("SelectedItemStats");
         _player_stats = equipment_menu.Q("PlayerStats");
+        _item_name = root.Q<Label>("ItemName");
+        _item_flavour = root.Q<Label>("ItemFlavour");
         //Debug.Log(_player_stats);
 
 
@@ -122,6 +126,8 @@ public class ItemSelector : MonoBehaviour
                 (_selected_items_stats.ElementAt(i) as SliderInt).value = stats[i];
                 (_player_stats.ElementAt(i) as SliderInt).value += stats[i];
             }
+            _item_name.text = "// " + selected.Nombre;
+            _item_flavour.text = "// " + selected.Flavour;
 
             Debug.Log(selected.Id);
             _items[(_category_selected_it as Item).Id] = selected.Id;
