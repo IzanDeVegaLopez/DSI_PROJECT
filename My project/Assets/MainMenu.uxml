@@ -46,9 +46,9 @@
                             <Item File="Electric_Guitar" Id="2" Hope="42" Agility="-31" Serenity="-23" />
                         </ui:VisualElement>
                         <ui:VisualElement picking-mode="Ignore" name="Menu3" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: row; display: flex;">
-                            <Item File="Carraca" Hope="56" Agility="-44" Serenity="-43" Hate="71" />
-                            <Item File="Drum_Kit" Id="1" />
-                            <Item File="Electric_Guitar" Id="2" />
+                            <Item File="Souls/Izerin" Hope="56" Agility="-44" Serenity="-43" Hate="71" Nombre="Izerin" />
+                            <Item File="Souls/Qohr" Id="1" Nombre="Qohr" />
+                            <Item File="Souls/Ykain" Id="2" Nombre="Ykain" />
                         </ui:VisualElement>
                         <ui:VisualElement picking-mode="Ignore" name="Loadouts" style="flex-grow: 1; flex-wrap: wrap; height: 493px; flex-direction: column; display: flex;">
                             <ui:Instance template="Loadout" name="Loadout" />
