@@ -167,5 +167,14 @@ public class ItemSelector : MonoBehaviour
                 (_player_stats.ElementAt(j) as SliderInt).value += stats[j];
             }
         }
+        var newstats = (_selected_item as Item).getStats();
+        for (int i = 0; i < 6; ++i)
+        {
+            (_selected_items_stats.ElementAt(i) as SliderInt).value = newstats[i];
+            //(_player_stats.ElementAt(j) as SliderInt).value += newstats[i];
+        }
+        _item_name.text = "// " + (_selected_item as Item).Nombre;
+        _item_flavour.text = "// " + (_selected_item as Item).Flavour;
     }
+
 }
