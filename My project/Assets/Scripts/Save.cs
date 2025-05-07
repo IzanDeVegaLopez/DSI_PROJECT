@@ -83,7 +83,7 @@ public class Save : MonoBehaviour
     {
         //Debug.Log("Delete");
 
-        root.Q("Loadouts").ElementAt(num).ElementAt(0).Q<Label>("Label").text = (num + 1).ToString() + " - None";
+        root.Q("Loadouts").ElementAt(num).ElementAt(0).Q<Label>("Label").text = (num + 1).ToString() + " - NONE";
 
         System.IO.File.WriteAllText(Application.persistentDataPath + "/loadout_" + num + ".json", JsonHelper.ToJson(new SaveData()));
     }

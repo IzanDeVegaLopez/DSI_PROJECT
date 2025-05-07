@@ -11,8 +11,8 @@
                     <ui:VisualElement name="DraggableIt1" style="flex-grow: initial; width: 40px; height: 40px; flex-shrink: initial; -unity-background-image-tint-color: rgb(255, 0, 0); background-color: rgb(255, 0, 0); margin-left: 0; margin-top: 0;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="ButtonsSpaceH" picking-mode="Ignore" style="flex-grow: 1; width: 40%; max-width: 40%;">
-                    <ui:Button text="// EQUIPMENT" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartGameButton" class="MainMenuButton" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; width: 80%; color: rgb(72, 59, 51); background-color: rgb(160, 146, 134);" />
-                    <ui:Button text="// .." parse-escape-sequences="true" display-tooltip-when-elided="true" class="MainMenuButton" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; width: 80%; color: rgb(72, 59, 51); background-color: rgb(160, 146, 134);" />
+                    <ui:Button text="// EQUIPMENT" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartGameButton" class="MainMenuButton" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; width: 90%; color: rgb(72, 59, 51); background-color: rgb(160, 146, 134);" />
+                    <ui:Button text="// .." parse-escape-sequences="true" display-tooltip-when-elided="true" class="MainMenuButton" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; width: 90%; color: rgb(72, 59, 51); background-color: rgb(160, 146, 134);" />
                 </ui:VisualElement>
                 <ui:VisualElement name="PaddingRight" style="flex-grow: 1; max-width: 30%;">
                     <ui:VisualElement name="DraggableIt2" style="flex-grow: initial; width: 40px; height: 40px; flex-shrink: initial; -unity-background-image-tint-color: rgb(255, 0, 0); background-color: rgb(255, 0, 0); margin-left: 0; margin-top: 0; align-items: flex-start; align-self: flex-start;" />

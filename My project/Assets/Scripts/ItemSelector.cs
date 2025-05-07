@@ -21,7 +21,7 @@ public class ItemSelector : MonoBehaviour
         get { return _soulname; }
         set { _soulname = value; }
     }
-    private string _soulname = "None";
+    private string _soulname = "NONE";
     public int[] Items
     {
         get { return _items; }
@@ -139,6 +139,8 @@ public class ItemSelector : MonoBehaviour
 
     public void LoadLoadout(int[] loadout_array)
     {
+        _item_name.text = "// NONE";
+        _item_flavour.text = "// Void";
         var root = GetComponent<UIDocument>().rootVisualElement;
 
         VisualElement selectable_cat = root.Q("SelectableCategoriesSpace");

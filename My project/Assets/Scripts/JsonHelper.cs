@@ -7,7 +7,7 @@ public class SaveData
 {
     public string soulname;
     public int[] items;
-    public SaveData(string soul = "None")
+    public SaveData(string soul = "NONE")
     {
         soulname = soul;
         items = new int[3] { -1, -1, -1 };
