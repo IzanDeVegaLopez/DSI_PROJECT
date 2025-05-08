@@ -3,7 +3,7 @@
         <ui:VisualElement name="Load" style="flex-grow: 1; min-width: 70%; flex-direction: row;">
             <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="font-size: 60px; -unity-font-style: normal; align-self: center; color: rgb(72, 59, 51);" />
         </ui:VisualElement>
-        <ui:VisualElement name="Save" style="flex-grow: 1; background-color: rgb(110, 255, 170); background-image: resource(&apos;save&apos;); -unity-background-scale-mode: scale-to-fit; -unity-background-image-tint-color: rgb(22, 56, 37);" />
+        <ui:VisualElement name="Save" style="flex-grow: 1; background-color: rgb(110, 232, 255); background-image: resource(&apos;save&apos;); -unity-background-scale-mode: scale-to-fit; -unity-background-image-tint-color: rgb(22, 33, 56);" />
         <ui:VisualElement name="Delete" style="flex-grow: 1; background-color: rgb(255, 128, 134); background-image: resource(&apos;delete&apos;); -unity-background-scale-mode: scale-to-fit; -unity-background-image-tint-color: rgb(82, 15, 24);" />
     </ui:VisualElement>
 </ui:UXML>
