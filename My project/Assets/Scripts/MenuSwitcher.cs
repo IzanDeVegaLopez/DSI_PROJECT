@@ -15,6 +15,7 @@ public class MenuSwitcher : MonoBehaviour
         //BUTTONS
         VisualElement startGame = root.Q("StartGameButton");
         VisualElement equipmentReturn = root.Q("EquipmentReturn");
+        VisualElement exitButton = root.Q("ExitGameButton");
         //Debug.Log(startGame);
         //Debug.Log(equipmentReturn);
         startGame.RegisterCallback<ClickEvent>(
@@ -26,6 +27,10 @@ public class MenuSwitcher : MonoBehaviour
             ev => {
                 hideAll();
                 mainMenu.style.display = DisplayStyle.Flex;
+        });
+        exitButton.RegisterCallback<ClickEvent>(ev =>
+        {
+            Application.Quit();
         });
 
         hideAll();
