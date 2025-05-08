@@ -1,9 +1,7 @@
 using System;
-using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
-using static UnityEditor.Progress;
 
 [Serializable]
 public class Item : VisualElement
@@ -164,8 +162,8 @@ public class Item : VisualElement
 
     public new class UxmlTraits : VisualElement.UxmlTraits
     {
-        UxmlStringAttributeDescription nombre = new UxmlStringAttributeDescription { name = "Nombre", defaultValue = "no name"};
-        UxmlStringAttributeDescription flavour = new UxmlStringAttributeDescription { name = "Flavour", defaultValue = "" };
+        UxmlStringAttributeDescription nombre = new UxmlStringAttributeDescription { name = "Nombre", defaultValue = "NONE"};
+        UxmlStringAttributeDescription flavour = new UxmlStringAttributeDescription { name = "Flavour", defaultValue = "Void" };
         UxmlStringAttributeDescription file = new UxmlStringAttributeDescription { name = "File", defaultValue = "" };
         UxmlIntAttributeDescription determination = new UxmlIntAttributeDescription { name = "Determination", defaultValue = 0 };
         UxmlIntAttributeDescription vigor = new UxmlIntAttributeDescription { name = "Vigor", defaultValue = 0 };

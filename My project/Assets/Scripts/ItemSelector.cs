@@ -87,8 +87,12 @@ public class ItemSelector : MonoBehaviour
 
             int[] stats;
 
-            if((_category_selected_it as Item).Id != 3)
+            if ((_category_selected_it as Item).Id != 3)
+            {
                 (_selected_item as Item).AssignItem(_category_selected_it);
+                _item_name.text = "// "+ (_selected_item as Item).Nombre;
+                _item_flavour.text = "// " + (_selected_item as Item).Flavour;
+            }
 
             for (int i = 0; i < 4; ++i)
             {
