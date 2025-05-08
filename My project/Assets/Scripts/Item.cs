@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
@@ -172,6 +173,7 @@ public class Item : VisualElement
         UxmlIntAttributeDescription hope = new UxmlIntAttributeDescription { name = "Hope", defaultValue = 0 };
         UxmlIntAttributeDescription hate = new UxmlIntAttributeDescription { name = "Hate", defaultValue = 0 };
         UxmlIntAttributeDescription id = new UxmlIntAttributeDescription { name = "Id", defaultValue = 0 };
+        
 
         public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
         {
@@ -187,6 +189,7 @@ public class Item : VisualElement
             item.Hope = hope.GetValueFromBag(bag, cc);
             item.Hate = hate.GetValueFromBag(bag, cc);
             item.Id = id.GetValueFromBag(bag, cc);
+            item.AddToClassList("Item");
         }
     }
 
@@ -212,8 +215,24 @@ public class Item : VisualElement
             this.style.borderRightColor =
             this.style.borderTopColor =
             this.style.borderBottomColor = new Color(72f / 255, 59f / 255, 51f / 255, 1);
-    }
 
+        this.RegisterCallback<MouseOverEvent>(OnHoverIn);
+        this.RegisterCallback<MouseOutEvent>(OnHoverOut);
+    }
+    public void OnHoverIn(MouseOverEvent e)
+    {
+        this.style.borderLeftWidth =
+                this.style.borderRightWidth =
+                this.style.borderTopWidth =
+                this.style.borderBottomWidth = 10;
+    }
+    public void OnHoverOut(MouseOutEvent e)
+    {
+        this.style.borderLeftWidth =
+                this.style.borderRightWidth =
+                this.style.borderTopWidth =
+                this.style.borderBottomWidth = 0;
+    }
     public Item AssignItem(VisualElement v)
     {
         Item i = v as Item;

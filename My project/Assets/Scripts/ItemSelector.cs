@@ -37,10 +37,7 @@ public class ItemSelector : MonoBehaviour
         VisualElement equipment_menu = root.Q("EquipmentMenu");
         VisualElement selectable_cat = equipment_menu.Q("SelectableCategoriesSpace");
         _category_selected_it = selectable_cat.ElementAt(0);
-        _category_selected_it.style.borderLeftWidth =
-                _category_selected_it.style.borderRightWidth =
-                _category_selected_it.style.borderTopWidth =
-                _category_selected_it.style.borderBottomWidth = 10;
+        _category_selected_it.style.backgroundColor = new Color(72f / 255, 59f / 255, 51f / 255, 1);
         //_category_selected_it.style.backgroundColor = new Color(1, 0, 0, 1);
         selectable_cat.RegisterCallback<ClickEvent>(seleccionaCategoria);
         VisualElement selectable_it = equipment_menu.Q("SelectableItemsSpace");
@@ -71,17 +68,11 @@ public class ItemSelector : MonoBehaviour
         VisualElement miTarjeta = evt.target as VisualElement;
         if (miTarjeta is Item)
         {
-            _category_selected_it.style.borderLeftWidth =
-                _category_selected_it.style.borderRightWidth =
-                _category_selected_it.style.borderTopWidth =
-                _category_selected_it.style.borderBottomWidth = 0;
+            _category_selected_it.style.backgroundColor = new Color(160f / 255, 146f / 255, 134f / 255, 1);
 
             _category_selected_it = miTarjeta as Item;
 
-            _category_selected_it.style.borderLeftWidth =
-                _category_selected_it.style.borderRightWidth =
-                _category_selected_it.style.borderTopWidth =
-                _category_selected_it.style.borderBottomWidth = 10;
+            _category_selected_it.style.backgroundColor = new Color(72f / 255, 59f / 255, 51f / 255, 1);
 
 
 
